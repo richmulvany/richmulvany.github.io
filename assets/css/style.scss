@@ -12,9 +12,9 @@ body {
 }
 
 a {
-  color: #2E8B57; /* Pine green */
+  color: #20603D; /* Darker Pine green */
   &:hover {
-    color: #20603D; /* A darker shade of pine green for hover */
+    color: #2E8B57; /*Pine Green */
   }
 }
 
@@ -67,7 +67,7 @@ a {
 
 .wrapper {
   background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
-  padding: 20px; /* Adds space inside the container */
+  padding: 20px; 
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -86,7 +86,7 @@ a {
   background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
   padding: 20px;
   margin: 20px auto;
-  max-width: 1200px; /* or whatever max width you prefer */
+  max-width: 1200px; 
   flex: 1 1 50%;
   }
 }
