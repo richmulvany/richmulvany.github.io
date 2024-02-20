@@ -5,14 +5,14 @@
 
 body {
   font-family: 'Georgia Serif', Georgia, serif;
-  background-color: #f0f0f0;
+  background-color: #FFF9C4;
   color: #333;
 }
 
 a {
-  color: #0066cc;
+  color: #2E8B57; /* Pine green */
   &:hover {
-    color: #0056b3;
+    color: #20603D; /* A darker shade of pine green for hover */
   }
 }
 
@@ -24,6 +24,7 @@ a {
   h1 {
     margin: 0;
     font-size: 24px;
+    color: #2E8B57; /* Pine green */
   }
 }
 
