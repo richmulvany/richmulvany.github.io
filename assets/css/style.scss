@@ -60,15 +60,20 @@ a {
 .wrapper {
   background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
   padding: 20px; /* Adds space inside the container */
-  /* Add any other styles you wish to apply to the wrapper */
+  display: flex;
+  flex-direction: column;
+  gap: 20px:
 }
 
+@media (min-width: 768px) {
+  .wrapper {
+    flex-direction:row;
+    flex-wrap: wrap;
+  }
 .main-container {
   background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
   padding: 20px;
   margin: 20px auto;
   max-width: 1200px; /* or whatever max width you prefer */
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Creates as many 300px columns as can fit */
-  gap: 20px; /* Space between items */
+  flex: 1 1 50%;
 }
