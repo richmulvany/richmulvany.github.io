@@ -3,7 +3,7 @@
 #### Technical Skills: Mathematica, Python, R
 
 ## Education
-Working towards MSc Data Science | The University of Aberdeen (2024)  
+MSc Data Science | The University of Aberdeen (In Progress - End 2024)  
 BA (Hons) History | The Open University (July '21)  
 
 ## Employment History
