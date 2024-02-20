@@ -57,9 +57,9 @@ a {
   animation-duration: 2s;
 }
 
-.main-container {
-  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white for readability */
+.wrapper {
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
   padding: 20px; /* Adds space inside the container */
-  margin: 20px auto; /* Centers the container with some margin */
-  max-width: 1200px; /* Maximum width of the container */
+  /* Add any other styles you wish to apply to the wrapper */
 }
+
