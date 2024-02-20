@@ -11,6 +11,7 @@ body {
   background-size: 12px 12px;
 }
 
+<div class="main-container">
 a {
   color: #2E8B57; /* Pine green */
   &:hover {
@@ -55,4 +56,12 @@ a {
 .fadeIn {
   animation-name: fadeIn;
   animation-duration: 2s;
+}
+</div>
+
+.main-container {
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white for readability */
+  padding: 20px; /* Adds space inside the container */
+  margin: 20px auto; /* Centers the container with some margin */
+  max-width: 1200px; /* Maximum width of the container */
 }
