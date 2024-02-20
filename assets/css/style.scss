@@ -68,4 +68,11 @@ a {
   padding: 20px;
   margin: 20px auto;
   max-width: 1200px; /* or whatever max width you prefer */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between items */
+}
+
+.text-container {
+  flex: 1 1 300px; /* Grow to fill available space, but not smaller than 300px */
 }
