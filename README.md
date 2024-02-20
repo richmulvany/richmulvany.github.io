@@ -1,4 +1,4 @@
-# Data Scientist PGT Student
+# Data Science PGT Student
 
 #### Technical Skills: Mathematica, Python, R
 
