@@ -72,7 +72,11 @@ a {
   flex-direction: column;
   gap: 20px;
 }
-
+@media (max-width: 767px) {
+  .site-logo {
+    display: none
+  }
+}
 @media (min-width: 768px) {
   .wrapper {
     flex-direction:row;
