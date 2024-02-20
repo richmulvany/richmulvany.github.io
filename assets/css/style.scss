@@ -68,11 +68,7 @@ a {
   padding: 20px;
   margin: 20px auto;
   max-width: 1200px; /* or whatever max width you prefer */
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Creates as many 300px columns as can fit */
   gap: 20px; /* Space between items */
-}
-
-.text-container {
-  flex: 1 1 300px; /* Grow to fill available space, but not smaller than 300px */
 }
