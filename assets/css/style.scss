@@ -90,7 +90,7 @@ a {
     margin: 20px 0; /* Adjust margin for top and bottom only */
   }
   .left-column {
-    /* Adjust if you need a specific width or flex settings */
+     flex: 0 0 250px;
   }
   .main-container {
     /* Flex property adjusted to fill space, with a specific max-width if needed */
