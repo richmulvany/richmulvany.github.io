@@ -19,18 +19,18 @@ a {
 }
 
 .site-logo {
-  width: 205px; 
-  height: auto; 
-  border: 1px solid #2E8B57; 
+  width: 205px;
+  height: auto;
+  border: 1px solid #2E8B57;
   display: block;
-  margin-bottom: 20px; /* Ensure space below the logo */
+  margin-bottom: 20px; /* Add some space below the logo */
 }
 
 .header {
   background-color: #333;
   color: white;
   padding: 20px 0;
-  
+
   h1 {
     margin: 0;
     font-size: 24px;
@@ -49,7 +49,7 @@ a {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  
+
   &:hover {
     background-color: #45a049;
   }
@@ -69,7 +69,8 @@ a {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 20px; /* Padding applied to the wrapper for spacing */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Apply background here for cohesion */
 }
 
 @media (max-width: 767px) {
@@ -81,18 +82,18 @@ a {
 @media (min-width: 768px) {
   .wrapper {
     flex-direction: row;
-    justify-content: space-between; /* This ensures space between columns */
+    flex-wrap: wrap;
+    justify-content: space-between; /* Ensure space between the two main areas */
   }
   .left-column, .main-container {
-    flex-basis: 48%; /* Adjust the basis to control the initial size */
-    padding: 20px; /* Padding for content within columns */
-    background-color: rgba(255, 255, 255, 0.9); /* Background applied to each column individually */
+    flex-basis: 48%; /* Slightly less than half to account for gap */
+    margin: 20px 0; /* Adjust margin for top and bottom only */
   }
   .left-column {
-    /* Customizations for left column if needed */
+    /* Adjust if you need a specific width or flex settings */
   }
   .main-container {
-    /* Adjustments for main content container */
-    flex-grow: 1; /* Allow the main container to grow and fill the space */
+    /* Flex property adjusted to fill space, with a specific max-width if needed */
+    flex-grow: 1;
   }
 }
