@@ -19,18 +19,18 @@ a {
 }
 
 .site-logo {
-  width: 205px; 
-  height: auto; 
-  border: 1px solid #2E8B57; 
+  width: 205px;
+  height: auto;
+  border: 1px solid #2E8B57;
   display: block;
-  margin-bottom: 20px; /* Ensure space below the logo */
+  margin-bottom: 20px; 
 }
 
 .header {
   background-color: #333;
   color: white;
   padding: 20px 0;
-  
+
   h1 {
     margin: 0;
     font-size: 24px;
@@ -49,7 +49,7 @@ a {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  
+
   &:hover {
     background-color: #45a049;
   }
@@ -69,30 +69,30 @@ a {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 20px; /* Padding applied to the wrapper for spacing */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 @media (max-width: 767px) {
   .site-logo {
-    display: none; /* Hide logo on small screens */
+    display: none; 
   }
 }
 
 @media (min-width: 768px) {
   .wrapper {
     flex-direction: row;
-    justify-content: space-between; /* This ensures space between columns */
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
   .left-column, .main-container {
-    flex-basis: 48%; /* Adjust the basis to control the initial size */
-    padding: 20px; /* Padding for content within columns */
-    background-color: rgba(255, 255, 255, 0.9); /* Background applied to each column individually */
+    flex-basis: 48%; 
+    margin: 20px 0; 
   }
   .left-column {
-    fles: 0 0 250px;
+
   }
   .main-container {
-    /* Adjustments for main content container */
-    flex-grow: 1; /* Allow the main container to grow and fill the space */
+    flex-grow: 1;
   }
 }
