@@ -14,23 +14,23 @@ body {
 a {
   color: #20603D; /* Darker Pine green */
   &:hover {
-    color: #2E8B57; /*Pine Green */
+    color: #2E8B57; /* Pine Green */
   }
 }
 
 .site-logo {
-  width: 205px; 
-  height: auto; 
-  border: 1px solid #2E8B57; 
-  display: block; 
-  margin: 0; 
+  width: 205px;
+  height: auto;
+  border: 1px solid #2E8B57;
+  display: block;
+  margin-bottom: 20px; /* Add some space below the logo */
 }
 
 .header {
   background-color: #333;
   color: white;
   padding: 20px 0;
-  
+
   h1 {
     margin: 0;
     font-size: 24px;
@@ -49,7 +49,7 @@ a {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  
+
   &:hover {
     background-color: #45a049;
   }
@@ -65,46 +65,40 @@ a {
   animation-duration: 2s;
 }
 
-@media (max-width: 767px) {
-  .site-logo {
-    display: none
-  }
-}
-
 .wrapper {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Apply background here for cohesion */
 }
 
-.left-column, .main-container {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 20px;
+@media (max-width: 767px) {
+  .site-logo {
+    display: none; /* Hide logo on small screens */
+  }
 }
 
 @media (min-width: 768px) {
   .wrapper {
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between; /* Ensure space between the two main areas */
   }
   .left-column, .main-container {
-    flex: 1;
-    margin: 20px;
-    max-width: calc(50% - 40px); /* Adjust based on margin */
+    flex-basis: 48%; /* Slightly less than half to account for gap */
+    margin: 20px 0; /* Adjust margin for top and bottom only */
   }
   .left-column {
-    max-width: calc(30% - 40px); /* Adjust based on actual width preference */
+    /* Adjust if you need a specific width or flex settings */
   }
   .main-container {
-    max-width: calc(70% - 40px); /* Adjust based on actual width preference */
+    /* Flex property adjusted to fill space, with a specific max-width if needed */
+    flex-grow: 1;
   }
 }
 
+/* Ensure .main-container styles aren't duplicated or conflicting */
 .main-container {
-  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 1200px; 
-  flex: 1 1 50%;
+  /* Keep only necessary styles that don't conflict with media queries */
 }
-
