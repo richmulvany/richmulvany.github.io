@@ -108,6 +108,15 @@ a {
   box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: Adds a subtle shadow for depth */
 }
 
+#blog-posts .blog-post {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#blog-posts .blog-post.fade-in {
+  opacity: 1;
+}
+
 #blog-posts .blog-post img {
   width: 90%; /* Reduces the size of the image to be slightly smaller */
   height: auto; /* Maintain aspect ratio */
