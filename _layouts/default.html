@@ -60,22 +60,39 @@
   </div>
   <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
   <!-- Include Intersection Observer Script Here for Fade-In Effect -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = 1; // Fade in
-          }
-        });
-      }, {
-        threshold: 0.1 // Trigger when 10% of the item is in view
-      });
+ <script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Elements to observe (ensure this matches your HTML structure)
+  const elementsToFadeIn = document.querySelectorAll('#blog-posts .blog-post');
 
-      document.querySelectorAll('#blog-posts .blog-post a').forEach(a => {
-        observer.observe(a); // Observe each blog post link for the fade-in effect
+  // Check if Intersection Observer is supported
+  if ('IntersectionObserver' in window) {
+    // Intersection Observer Options
+    const observerOptions = {
+      root: null, // observes elements in the viewport
+      threshold: 0.1, // trigger when 10% of the element is visible
+      rootMargin: "0px" // margin around the root
+    };
+
+    // Creating an observer
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Add a class to the element to start the animation
+          entry.target.classList.add('fade-in');
+          // Optional: Unobserve the element after it has faded in
+          observer.unobserve(entry.target);
+        }
       });
+    }, observerOptions);
+
+    // Observing each element
+    elementsToFadeIn.forEach(element => {
+      observer.observe(element);
     });
-  </script>
+  }
+});
+</script>
+
 </body>
 </html>
