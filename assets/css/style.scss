@@ -96,3 +96,20 @@ a {
     flex-grow: 1;
   }
 }
+
+#blog-posts .blog-post a {
+  display: block;
+  border: 1px solid #ccc; /* Border color can be changed */
+  border-radius: 10px; /* Adjust for desired roundness */
+  overflow: hidden; /* Ensures the border-radius applies to the image as well */
+  text-align: center; /* Center the text */
+  margin-bottom: 20px; /* Space between each blog post link */
+  opacity: 0; /* Start with links invisible for the fade-in effect */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for the fade-in */
+}
+
+#blog-posts .blog-post img {
+  width: 100%; /* Make the image fill the container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove any extra space below the image */
+}
