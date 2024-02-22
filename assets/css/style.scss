@@ -99,17 +99,24 @@ a {
 
 #blog-posts .blog-post a {
   display: block;
-  border: 1px solid #ccc; /* Border color can be changed */
-  border-radius: 40px; /* Adjust for desired roundness */
-  overflow: hidden; /* Ensures the border-radius applies to the image as well */
-  text-align: center; /* Center the text */
+  border: 1px solid transparent; /* Default border to ensure layout consistency */
+  border-radius: 10px; /* Adds rounded corners */
+  overflow: hidden; /* Ensures the image respects the border radius */
   margin-bottom: 20px; /* Space between each blog post link */
-  opacity: 0; /* Start with links invisible for the fade-in effect */
-  transition: opacity 0.5s ease-in-out; /* Smooth transition for the fade-in */
+  transition: border-color 0.3s ease, transform 0.3s ease; /* Smooth transitions for hover effects */
+  text-align: center; /* Center the text */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: Adds a subtle shadow for depth */
 }
 
 #blog-posts .blog-post img {
-  width: 100%; /* Make the image fill the container */
+  width: 90%; /* Reduces the size of the image to be slightly smaller */
   height: auto; /* Maintain aspect ratio */
   display: block; /* Remove any extra space below the image */
+  margin: 0 auto; /* Center the image within the link */
+  border-radius: 10px; /* Ensures the image itself also has rounded corners if needed */
+}
+
+#blog-posts .blog-post a:hover {
+  border-color: #2E8B57; /* Pine green border on hover */
+  transform: scale(1.05); /* Optional: Slightly increases size on hover for emphasis */
 }
