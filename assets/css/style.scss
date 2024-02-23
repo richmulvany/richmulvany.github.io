@@ -128,7 +128,7 @@ a {
   display: block; /* Remove any extra space below the image */
 }
 
-#blog-posts .blog-post :hover {
+#blog-posts .blog-post:hover {
   transform: scale(1.05); /* Optional: Slightly increases size on hover for emphasis */
   border-color: #2E8B57; /* Pine green border on hover */
 }
