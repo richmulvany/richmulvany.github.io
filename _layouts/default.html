@@ -13,94 +13,96 @@
 </head>
 <body>
   <div class="wrapper">
-    <!-- Left column for static content -->
-    <div class="left-column">
-      <header>
-        <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
-        {% if site.logo %}
-        <img src="{{site.logo | relative_url}}" alt="Logo" class="site-logo" />
-        {% endif %}
-        <p>{{ site.description | default: site.github.project_tagline }}</p>
-        {% if site.github.is_project_page %}
-        <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ site.github.repository_nwo }}</small></a></p>
-        {% endif %}
-        {% if site.github.is_user_page %}
-        <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
-        {% endif %}
-        {% if site.show_downloads %}
-        <ul class="downloads">
-          <li><a href="{{ site.github.zip_url }}">Download <strong>ZIP File</strong></a></li>
-          <li><a href="{{ site.github.tar_url }}">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
-        </ul>
-        {% endif %}
-      </header>
-    </div>
-    <!-- Main container for scrollable content -->
+    <header>
+      <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+      {% if site.logo %}
+      <img src="{{site.logo | relative_url}}" alt="Logo" class="site-logo" />
+      {% endif %}
+      <p>{{ site.description | default: site.github.project_tagline }}</p>
+      {% if site.github.is_project_page %}
+      <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ site.github.repository_nwo }}</small></a></p>
+      {% endif %}
+      {% if site.github.is_user_page %}
+      <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
+      {% endif %}
+      {% if site.show_downloads %}
+      <ul class="downloads">
+        <li><a href="{{ site.github.zip_url }}">Download <strong>ZIP File</strong></a></li>
+        <li><a href="{{ site.github.tar_url }}">Download <strong>TAR Ball</strong></a></li>
+        <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
+      </ul>
+      {% endif %}
+    </header>
+  </div>
     <div class="main-container">
       <section>
         {{ content }}
-        <!-- Blog Posts Section -->
-        <div id="blog-posts">
-          <!-- Dynamically loaded blog posts will go here -->
-          <div class="blog-post">
-            <a href="https://richmulvany.hashnode.dev">
-              <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1708609112033/c0e5c2d7-4e2b-46d2-a637-8960b0dd38e9.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp" alt="Exploring Global Female Literacy and Infant Mortality Rates">
-            </a>
-          </div>
-          <!-- Repeat for each blog post -->
-          <div class="blog-post">
-            <a href="https://richmulvany.hashnode.dev">
-              <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1708609112033/c0e5c2d7-4e2b-46d2-a637-8960b0dd38e9.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp" alt="Exploring Global Female Literacy and Infant Mortality Rates">
-            </a>
-          </div>
-          <div class="blog-post">
-            <a href="https://richmulvany.hashnode.dev">
-              <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1708609112033/c0e5c2d7-4e2b-46d2-a637-8960b0dd38e9.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp" alt="Exploring Global Female Literacy and Infant Mortality Rates">
-            </a>
-          <div class="blog-post">
-            <a href="https://richmulvany.hashnode.dev">
-              <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1708609112033/c0e5c2d7-4e2b-46d2-a637-8960b0dd38e9.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp" alt="Exploring Global Female Literacy and Infant Mortality Rates">
-            </a>
-          </div>
-          <div class="blog-post">
-            <a href="https://richmulvany.hashnode.dev">
-              <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1708609112033/c0e5c2d7-4e2b-46d2-a637-8960b0dd38e9.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp" alt="Exploring Global Female Literacy and Infant Mortality Rates">
-            </a>
-          </div>
-          <div class="blog-post">
-            <a href="https://richmulvany.hashnode.dev">
-              <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1708609112033/c0e5c2d7-4e2b-46d2-a637-8960b0dd38e9.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp" alt="Exploring Global Female Literacy and Infant Mortality Rates">
-            </a>
-          </div>
-          <div class="blog-post">
-            <a href="https://richmulvany.hashnode.dev">
-              <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1708609112033/c0e5c2d7-4e2b-46d2-a637-8960b0dd38e9.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp" alt="Exploring Global Female Literacy and Infant Mortality Rates">
-            </a>
-          </div>
-          </div>
-        </div>
+      <!-- Blog Posts Section -->
+      <div id="blog-posts">
+        <!-- Dynamically loaded blog posts will go here -->
+  <div class="blog-post">
+    <a href="https://richmulvany.hashnode.dev">
+      <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1708609112033/c0e5c2d7-4e2b-46d2-a637-8960b0dd38e9.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp" alt="Exploring Global Female Literacy and Infant Mortality Rates">
+    </a>
+  </div>
+  <div class="blog-post">
+    <a href="https://richmulvany.hashnode.dev">
+      <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1708609112033/c0e5c2d7-4e2b-46d2-a637-8960b0dd38e9.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp" alt="Exploring Global Female Literacy and Infant Mortality Rates">
+    </a>
+  </div>
+  <div class="blog-post">
+    <a href="https://richmulvany.hashnode.dev">
+      <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1708609112033/c0e5c2d7-4e2b-46d2-a637-8960b0dd38e9.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp" alt="Exploring Global Female Literacy and Infant Mortality Rates">
+    </a>
+  </div>
+  <div class="blog-post">
+    <a href="https://richmulvany.hashnode.dev">
+      <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1708609112033/c0e5c2d7-4e2b-46d2-a637-8960b0dd38e9.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp" alt="Exploring Global Female Literacy and Infant Mortality Rates">
+    </a>
+  </div>
+  <div class="blog-post">
+    <a href="https://richmulvany.hashnode.dev">
+      <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1708609112033/c0e5c2d7-4e2b-46d2-a637-8960b0dd38e9.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp" alt="Exploring Global Female Literacy and Infant Mortality Rates">
+    </a>
+  </div>
+      </div>
       </section>
-    </div>
   </div>
   <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
-  <!-- Intersection Observer Script for Fade-In Effect -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const elementsToFadeIn = document.querySelectorAll('#blog-posts .blog-post');
-      if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('fade-in');
-            }
-          });
-        }, { threshold: 0.1 });
-        elementsToFadeIn.forEach((element) => {
-          observer.observe(element);
-        });
-      }
+  <!-- Include Intersection Observer Script Here for Fade-In Effect -->
+ <script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Elements to observe (ensure this matches your HTML structure)
+  const elementsToFadeIn = document.querySelectorAll('#blog-posts .blog-post');
+
+  // Check if Intersection Observer is supported
+  if ('IntersectionObserver' in window) {
+    // Intersection Observer Options
+    const observerOptions = {
+      root: null, // observes elements in the viewport
+      threshold: 0.1, // trigger when 10% of the element is visible
+      rootMargin: "0px" // margin around the root
+    };
+
+    // Creating an observer
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Add a class to the element to start the animation
+          entry.target.classList.add('fade-in');
+          // Optional: Unobserve the element after it has faded in
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observing each element
+    elementsToFadeIn.forEach(element => {
+      observer.observe(element);
     });
-  </script>
+  }
+});
+</script>
+
 </body>
 </html>
