@@ -173,6 +173,7 @@ a {
   padding: 10px;
   border-radius: 5px;
   text-decoration: none; /* Removes underline */
+  width: 360px;
 }
 
 
@@ -199,6 +200,10 @@ a {
     transform: translateX(0);
     width: calc(20% + 40px); /* Example final width, adjust as needed */
   }
+}
+
+.bar {
+  animation: growAndMove 2s ease-in-out forwards;
 }
 
 .bar {
