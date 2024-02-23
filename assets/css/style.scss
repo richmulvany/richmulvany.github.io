@@ -160,6 +160,11 @@ a {
   flex-shrink: 0; /* Prevents icon from shrinking */
 }
 
+.bar.github { width: 70%; }
+.bar.linkedin { width: 60%; }
+.bar.hashnode { width: 50%; }
+.bar.email { width: 40%; }
+
 .bar {
   display: flex;
   align-items: center;
@@ -168,8 +173,9 @@ a {
   padding: 10px;
   border-radius: 5px;
   text-decoration: none; /* Removes underline */
-  width: 360px;
+  /* No min-width here since you're setting sizes directly */
 }
+
 
 /* Example hover effect */
 .bar:hover {
@@ -200,3 +206,6 @@ a {
   animation: growAndMove 2s ease-in-out forwards;
 }
 
+.bar {
+  animation: moveAround 2s ease-in-out;
+}
