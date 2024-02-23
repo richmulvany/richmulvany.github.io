@@ -169,6 +169,7 @@ a {
   border-radius: 5px;
   flex-grow: 1; /* Bar takes remaining space */
   text-decoration: none; /* Removes underline */
+  min-width: 150px;
 }
 
 /* Example hover effect */
