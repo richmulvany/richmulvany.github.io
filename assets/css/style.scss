@@ -5,53 +5,16 @@
 
 body {
   font-family: 'DejaVu Sans Mono', monospace;
-  background-color: #f0f0f0; /* Background color for the whole page */
-  color: #333;
-}
-
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
   background-color: #f0f0f0;
-}
-
-.wrapper {
-  display: flex;
-  flex-wrap: wrap; /* Allows content to wrap on smaller screens */
-}
-
-.left-column {
-  width: 300px; /* Fixed width for the left column */
-  height: 100vh; /* Full viewport height */
-  position: sticky;
-  top: 0; /* Stick to the top */
-  background-color: white; /* Distinct background for the left column */
-  padding: 20px;
-  box-sizing: border-box;
-  overflow-y: auto; /* Allows scrolling within the left column if content overflows */
-}
-
-.main-container {
-  flex-grow: 1; /* Occupies the remaining width */
-  padding: 20px;
-  overflow-y: auto; /* Ensures content can scroll */
-  height: 100vh; /* Full viewport height for consistent scrolling */
-  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background for contrast */
-}
-
-@media (max-width: 768px) {
-  .left-column, .main-container {
-    width: 100%; /* Full width on smaller screens */
-    height: auto; /* Height adjusts to content */
-    position: relative; /* Reset positioning */
-  }
+  color: #333;
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%232E8B57' stroke-width='1'%3E%3Cpath d='M2,2 L6,6 M6,2 L2,6' /%3E%3C/g%3E%3C/svg%3E");
+  background-size: 8px 8px;
 }
 
 a {
-  color: #20603D;
+  color: #20603D; /* Darker Pine green */
   &:hover {
-    color: #2E8B57;
+    color: #2E8B57; /* Pine Green */
   }
 }
 
@@ -67,16 +30,16 @@ a {
   background-color: #333;
   color: white;
   padding: 20px 0;
-  
+
   h1 {
     margin: 0;
     font-size: 24px;
-    color: #2E8B57;
+    color: #2E8B57; /* Pine green */
   }
 }
 
 .button {
-  background-color: #4CAF50;
+  background-color: #4CAF50; /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -86,7 +49,7 @@ a {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  
+
   &:hover {
     background-color: #45a049;
   }
@@ -118,56 +81,54 @@ a {
 
 @media (min-width: 768px) {
   .wrapper {
-    display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .left-column, .main-container {
+    flex-basis: 48%; 
+    margin: 20px 0; 
   }
   .left-column {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    width: 300px;
-    background-color: white;
-    padding: 20px;
-    box-sizing: border-box;
-    z-index: 10;
+
   }
   .main-container {
     flex-grow: 1;
-    overflow: auto;
-    height: 100vh;
-    margin-left: 20px; /* Ensure some space between the columns */
   }
 }
 
 #blog-posts .blog-post {
-  max-width: 420px;
-  margin: 0 auto 20px;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease, opacity 0.5s ease-in-out;
+  max-width: 420px; /* Adjust the overall size of the blog post buttons */
+  margin: 0 auto 20px; /* Center align and add bottom margin */
+  overflow: hidden; /* Ensures content fits within the borders */
+  border-radius: 10px; /* Keeps the rounded corners */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds a shadow */
+  transition: transform 0.3s ease, opacity 0.5s ease-in-out; /* Include opacity transition here */
   border: 1px solid transparent;
+}
+
+#blog-posts .blog-post a {
+  display: block;
+  text-decoration: none; /* Removes underline from links */
+  color: inherit; /* Inherits text color from parent */
+}
+
+#blog-posts .blog-post {
   opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
 #blog-posts .blog-post.fade-in {
   opacity: 1;
 }
 
-#blog-posts .blog-post a {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-}
-
 #blog-posts .blog-post img {
-  width: 100%;
-  height: auto;
-  display: block;
+  width: 100%; /* Ensures the image scales with the container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove any extra space below the image */
 }
 
 #blog-posts .blog-post:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Optional: Slightly increases size on hover for emphasis */
   border-color: #2E8B57; /* Pine green border on hover */
 }
