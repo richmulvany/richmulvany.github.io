@@ -88,10 +88,10 @@ a {
   }
   .left-column, .main-container {
     flex-basis: 48%; 
+    margin: 4px 0;
   }
   .left-column {
-  position: sticky;
-  top: 0;
+
   }
   .main-container {
     flex-grow: 1;
