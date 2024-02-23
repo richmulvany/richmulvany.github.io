@@ -3,6 +3,11 @@
 
 @import "{{ site.theme }}";
 
+body {
+  font-family: 'DejaVu Sans Mono', monospace;
+  background-color: #f0f0f0; /* Background color for the whole page */
+  color: #333;
+}
 /* Apply base styles */
 body, html {
   height: 100%;
