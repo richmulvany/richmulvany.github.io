@@ -5,10 +5,40 @@
 
 body {
   font-family: 'DejaVu Sans Mono', monospace;
-  background-color: #f0f0f0;
+  background-color: #f0f0f0; /* Background color for the whole page */
   color: #333;
-  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%232E8B57' stroke-width='1'%3E%3Cpath d='M2,2 L6,6 M6,2 L2,6' /%3E%3C/g%3E%3C/svg%3E");
-  background-size: 8px 8px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    flex-direction: row;
+    align-items: flex-start; /* Align items at the start of the flex container */
+  }
+  .left-column {
+    width: 300px; /* Fixed width for the left column */
+    background-color: white; /* Distinct white background for the left column */
+    padding: 20px;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0; /* Stick to the top of the viewport */
+    height: 100vh; /* Full height viewport */
+    overflow-y: auto; /* In case content is taller than the viewport */
+  }
+  .main-container {
+    flex-grow: 1; /* Allow the main content to grow */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent or solid white background */
+    padding: 20px;
+    overflow-y: auto; /* Scrollable content */
+    margin-left: 20px; /* Space between the left column and the main content */
+    height: fit-content; /* Fit the height to the content */
+    min-height: 100vh; /* Minimum height to cover viewport */
+  }
 }
 
 a {
