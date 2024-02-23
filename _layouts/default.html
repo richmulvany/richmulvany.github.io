@@ -127,10 +127,10 @@ document.addEventListener("DOMContentLoaded", function() {
 <!-- Bar Chart Links script -->  
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const bars = document.querySelectorAll('.bar');
+    const bars = document.querySelectorAll('.icon-bar-container .bar'); // Target bars within containers
     bars.forEach(bar => {
       const randomWidth = 20 + Math.random() * 80; // Random width between 20% and 100%
-      bar.style.width = `${randomWidth}%`;
+      bar.style.width = `calc(${randomWidth}% - 40px)`; // Adjust for padding/margins if necessary
     });
   });
 </script>
