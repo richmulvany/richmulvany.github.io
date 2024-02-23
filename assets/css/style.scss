@@ -8,50 +8,57 @@ body {
   background-color: #f0f0f0; /* Background color for the whole page */
   color: #333;
 }
-/* Apply base styles */
+
+/* Base Styles */
 body, html {
-  height: 100%;
   margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 .wrapper {
   display: flex;
-  min-height: 100vh; /* Ensure wrapper fills the viewport height */
+  min-height: 100vh; /* Full viewport height */
 }
 
-/* Left Column: Fixed Background */
+/* Left Column Styles */
 .left-column {
-  position: fixed;
-  width: 300px; /* Adjust based on your design */
-  height: 100%;
+  width: 300px; /* Or your preferred width */
   padding: 20px;
   box-sizing: border-box;
-  background-color: white;
-  overflow-y: auto; /* For scrolling within the column if needed */
 }
 
-/* Main Container: Scrollable Content on the Right */
+.left-background {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  background-color: white; /* Solid background for left column */
+  padding-right: 20px; /* Match the left-column padding if needed */
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+/* Main Container - Adjusted for natural page scroll */
 .main-container {
-  margin-left: 300px; /* Equal to the width of the left-column */
   flex-grow: 1;
   padding: 20px;
-  overflow-y: auto; /* Allows content to scroll */
-  height: 100vh;
-  box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent or solid color */
+  overflow: hidden; /* Adjust as needed */
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent or solid for right column */
 }
 
 @media (max-width: 767px) {
-  .left-column {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .left-column, .left-background {
+    width: 100%; /* Full width for smaller screens */
     position: relative;
-    width: 100%;
     height: auto;
-    margin-bottom: 20px;
   }
 
   .main-container {
-    margin-left: 0;
-    height: auto;
+    margin-left: 0; /* Remove margin for smaller screens */
   }
 }
 
