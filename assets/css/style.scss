@@ -1,12 +1,14 @@
----
----
-
 @import "{{ site.theme }}";
 
-body {
+body, html {
+  margin: 0;
+  padding: 0;
   font-family: 'DejaVu Sans Mono', monospace;
   background-color: #f0f0f0;
   color: #333;
+}
+
+body {
   background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%232E8B57' stroke-width='1'%3E%3Cpath d='M2,2 L6,6 M6,2 L2,6' /%3E%3C/g%3E%3C/svg%3E");
   background-size: 8px 8px;
 }
@@ -55,67 +57,42 @@ a {
   }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.fadeIn {
-  animation-name: fadeIn;
-  animation-duration: 2s;
-}
-
 .wrapper {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-direction: row; /* Changed to row for consistent layout */
+  max-width: 100%;
+}
+
+.left-column {
+  flex: 0 0 300px; /* Fixed width for the left column */
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.9);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background-color: white; /* Ensure solid white background */
 }
 
-@media (max-width: 767px) {
-  .site-logo {
-    display: none; 
-  }
+.main-container {
+  flex: 1; /* Allows the container to fill the rest of the space */
+  padding: 20px;
+  overflow-y: auto; /* Ensures content can scroll */
 }
 
-@media (min-width: 768px) {
-  .wrapper {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .left-column, .main-container {
-    flex-basis: 48%; 
-    margin: 20px 0; 
-  }
-  .left-column {
-
-  }
-  .main-container {
-    flex-grow: 1;
-  }
-}
-
-#blog-posts .blog-post {
-  max-width: 420px; /* Adjust the overall size of the blog post buttons */
-  margin: 0 auto 20px; /* Center align and add bottom margin */
-  overflow: hidden; /* Ensures content fits within the borders */
-  border-radius: 10px; /* Keeps the rounded corners */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds a shadow */
-  transition: transform 0.3s ease, opacity 0.5s ease-in-out; /* Include opacity transition here */
-  border: 1px solid transparent;
-}
-
-#blog-posts .blog-post a {
+#blog-posts .blog-post, #blog-posts .blog-post a {
+  max-width: 420px;
+  margin: 0 auto 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, opacity 0.5s ease-in-out;
   display: block;
-  text-decoration: none; /* Removes underline from links */
-  color: inherit; /* Inherits text color from parent */
+  text-decoration: none;
+  color: inherit;
 }
 
 #blog-posts .blog-post {
+  border: 1px solid transparent;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
 }
 
 #blog-posts .blog-post.fade-in {
@@ -123,12 +100,26 @@ a {
 }
 
 #blog-posts .blog-post img {
-  width: 100%; /* Ensures the image scales with the container */
-  height: auto; /* Maintain aspect ratio */
-  display: block; /* Remove any extra space below the image */
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 #blog-posts .blog-post:hover {
-  transform: scale(1.05); /* Optional: Slightly increases size on hover for emphasis */
+  transform: scale(1.05);
   border-color: #2E8B57; /* Pine green border on hover */
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .left-column, .main-container {
+    flex: 1 0 auto;
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: auto;
+  }
 }
