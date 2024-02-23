@@ -161,9 +161,9 @@ a {
 }
 
 .bar.github { width: 70%; }
-.bar.linkedin { width: 60%; }
-.bar.hashnode { width: 50%; }
-.bar.email { width: 40%; }
+.bar.linkedin { width: 50%; }
+.bar.hashnode { width: 80%; }
+.bar.email { width: 30%; }
 
 .bar {
   display: flex;
@@ -173,7 +173,7 @@ a {
   padding: 10px;
   border-radius: 5px;
   text-decoration: none; /* Removes underline */
-  /* No min-width here since you're setting sizes directly */
+  width: 360px;
 }
 
 
@@ -200,10 +200,6 @@ a {
     transform: translateX(0);
     width: calc(20% + 40px); /* Example final width, adjust as needed */
   }
-}
-
-.bar {
-  animation: growAndMove 2s ease-in-out forwards;
 }
 
 .bar {
