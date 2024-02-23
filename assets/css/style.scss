@@ -87,9 +87,7 @@ a {
     align-items: flex-start;
   }
   .left-column, .main-container {
-    flex-basis: 48%;
-    padding: 20px;
-    margin: 20px 0; 
+    flex-basis: 48%; 
   }
   .left-column {
   position: sticky;
