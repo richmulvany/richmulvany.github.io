@@ -1,8 +1,9 @@
+---
+---
+
 @import "{{ site.theme }}";
 
-body, html {
-  margin: 0;
-  padding: 0;
+body {
   font-family: 'DejaVu Sans Mono', monospace;
   background-color: #f0f0f0;
   color: #333;
@@ -11,10 +12,9 @@ body, html {
 }
 
 a {
-  color: #20603D;
-  text-decoration: none;
+  color: #20603D; /* Darker Pine green */
   &:hover {
-    color: #2E8B57;
+    color: #2E8B57; /* Pine Green */
   }
 }
 
@@ -23,76 +23,112 @@ a {
   height: auto;
   border: 1px solid #2E8B57;
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 20px; 
 }
 
 .header {
   background-color: #333;
   color: white;
   padding: 20px 0;
-  
+
   h1 {
     margin: 0;
     font-size: 24px;
-    color: #2E8B57;
+    color: #2E8B57; /* Pine green */
   }
 }
 
 .button {
-  background-color: #4CAF50;
+  background-color: #4CAF50; /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
   text-align: center;
+  text-decoration: none;
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  
+
   &:hover {
     background-color: #45a049;
   }
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 2s;
+}
+
 .wrapper {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.left-column, .main-container {
+  flex-direction: column;
+  gap: 20px;
   padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
-.left-column {
-  background-color: white; /* For the solid background */
-  color: #333; /* Correct text color */
+@media (max-width: 767px) {
+  .site-logo {
+    display: none; 
+  }
 }
 
-.main-container {
-  flex-grow: 1;
+@media (min-width: 768px) {
+  .wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .left-column, .main-container {
+    flex-basis: 48%; 
+    margin: 20px 0; 
+  }
+  .left-column {
+
+  }
+  .main-container {
+    flex-grow: 1;
+  }
 }
 
 #blog-posts .blog-post {
-  margin: 20px 0;
-  border: 1px solid #2E8B57; /* Restored border */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Shadow for depth */
-  opacity: 0; /* Initial state for fade-in */
-  transition: opacity 0.5s ease-in-out, transform 0.3s ease;
+  max-width: 420px; /* Adjust the overall size of the blog post buttons */
+  margin: 0 auto 20px; /* Center align and add bottom margin */
+  overflow: hidden; /* Ensures content fits within the borders */
+  border-radius: 10px; /* Keeps the rounded corners */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds a shadow */
+  transition: transform 0.3s ease, opacity 0.5s ease-in-out; /* Include opacity transition here */
+  border: 1px solid transparent;
+}
+
+#blog-posts .blog-post a {
+  display: block;
+  text-decoration: none; /* Removes underline from links */
+  color: inherit; /* Inherits text color from parent */
+}
+
+#blog-posts .blog-post {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
 #blog-posts .blog-post.fade-in {
-  opacity: 1; /* Fade-in effect */
-}
-
-#blog-posts .blog-post:hover {
-  transform: scale(1.05); /* Hover effect */
-  border-color: #2E8B57; /* Green border on hover */
+  opacity: 1;
 }
 
 #blog-posts .blog-post img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px; /* Ensure images are also rounded */
+  width: 100%; /* Ensures the image scales with the container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove any extra space below the image */
+}
+
+#blog-posts .blog-post:hover {
+  transform: scale(1.05); /* Optional: Slightly increases size on hover for emphasis */
+  border-color: #2E8B57; /* Pine green border on hover */
 }
