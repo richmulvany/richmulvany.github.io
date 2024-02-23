@@ -9,59 +9,44 @@ body {
   color: #333;
 }
 
-/* Base Styles */
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
+  background-color: #f0f0f0;
 }
 
 .wrapper {
   display: flex;
-  min-height: 100vh; /* Full viewport height */
+  flex-wrap: wrap; /* Allows content to wrap on smaller screens */
 }
 
-/* Left Column Styles */
 .left-column {
-  width: 300px; /* Or your preferred width */
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.left-background {
+  width: 300px; /* Fixed width for the left column */
+  height: 100vh; /* Full viewport height */
   position: sticky;
-  top: 0;
-  height: 100vh;
-  background-color: white; /* Solid background for left column */
-  padding-right: 20px; /* Match the left-column padding if needed */
-  box-sizing: border-box;
-  z-index: 1;
-}
-
-/* Main Container - Adjusted for natural page scroll */
-.main-container {
-  flex-grow: 1;
+  top: 0; /* Stick to the top */
+  background-color: white; /* Distinct background for the left column */
   padding: 20px;
-  overflow: hidden; /* Adjust as needed */
-  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent or solid for right column */
+  box-sizing: border-box;
+  overflow-y: auto; /* Allows scrolling within the left column if content overflows */
 }
 
-@media (max-width: 767px) {
-  .wrapper {
-    flex-direction: column;
-  }
-
-  .left-column, .left-background {
-    width: 100%; /* Full width for smaller screens */
-    position: relative;
-    height: auto;
-  }
-
-  .main-container {
-    margin-left: 0; /* Remove margin for smaller screens */
-  }
+.main-container {
+  flex-grow: 1; /* Occupies the remaining width */
+  padding: 20px;
+  overflow-y: auto; /* Ensures content can scroll */
+  height: 100vh; /* Full viewport height for consistent scrolling */
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background for contrast */
 }
 
+@media (max-width: 768px) {
+  .left-column, .main-container {
+    width: 100%; /* Full width on smaller screens */
+    height: auto; /* Height adjusts to content */
+    position: relative; /* Reset positioning */
+  }
+}
 
 a {
   color: #20603D;
