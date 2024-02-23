@@ -104,6 +104,10 @@ a {
     padding: 0;
 }
 
+.left-column > :first-child, .main-container > :first-child {
+  margin-top: 0; /* Removes top margin for the first element inside each column */
+}
+
 #blog-posts .blog-post {
   max-width: 420px; /* Adjust the overall size of the blog post buttons */
   margin: 0 auto 20px; /* Center align and add bottom margin */
