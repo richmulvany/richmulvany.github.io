@@ -87,7 +87,8 @@ a {
     align-items: flex-start;
   }
   .left-column, .main-container {
-    flex-basis: 48%; 
+    flex-basis: 48%;
+    padding: 20px;
     margin: 20px 0; 
   }
   .left-column {
@@ -102,10 +103,6 @@ a {
 .header h1 .header p .header ul .header ul li {
   margin: 0;
     padding: 0;
-}
-
-.left-column > :first-child, .main-container > :first-child {
-  margin-top: 0; /* Removes top margin for the first element inside each column */
 }
 
 #blog-posts .blog-post {
