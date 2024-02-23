@@ -3,43 +3,53 @@
 
 @import "{{ site.theme }}";
 
-body {
-  font-family: 'DejaVu Sans Mono', monospace;
-  background-color: #f0f0f0; /* Background color for the whole page */
-  color: #333;
+/* Apply base styles */
+body, html {
+  height: 100%;
+  margin: 0;
 }
 
 .wrapper {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  min-height: 100vh; /* Ensure wrapper fills the viewport height */
 }
 
-@media (min-width: 768px) {
-  .wrapper {
-    flex-direction: row;
-    align-items: flex-start; /* Align items at the start of the flex container */
-  }
+/* Left Column: Fixed Background */
+.left-column {
+  position: fixed;
+  width: 300px; /* Adjust based on your design */
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: white;
+  overflow-y: auto; /* For scrolling within the column if needed */
+}
+
+/* Main Container: Scrollable Content on the Right */
+.main-container {
+  margin-left: 300px; /* Equal to the width of the left-column */
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto; /* Allows content to scroll */
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent or solid color */
+}
+
+@media (max-width: 767px) {
   .left-column {
-    width: 300px; /* Fixed width for the left column */
-    background-color: white; /* Distinct white background for the left column */
-    padding: 20px;
-    box-sizing: border-box;
-    position: sticky;
-    top: 0; /* Stick to the top of the viewport */
-    height: 100vh; /* Full height viewport */
-    overflow-y: auto; /* In case content is taller than the viewport */
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
   }
+
   .main-container {
-    flex-grow: 1; /* Allow the main content to grow */
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent or solid white background */
-    padding: 20px;
-    overflow-y: auto; /* Scrollable content */
-    margin-left: 20px; /* Space between the left column and the main content */
-    height: fit-content; /* Fit the height to the content */
-    min-height: 100vh; /* Minimum height to cover viewport */
+    margin-left: 0;
+    height: auto;
   }
 }
+
 
 a {
   color: #20603D;
