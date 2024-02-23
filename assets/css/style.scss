@@ -97,35 +97,29 @@ a {
   }
 }
 
+#blog-posts .blog-post {
+  max-width: 150px; /* Adjust the overall size of the blog post buttons */
+  margin: 0 auto 20px; /* Center align and add bottom margin */
+  overflow: hidden; /* Ensures content fits within the borders */
+  border-radius: 10px; /* Keeps the rounded corners */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds a shadow */
+  transition: transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
 #blog-posts .blog-post a {
   display: block;
-  border: 1px solid transparent; /* Default border to ensure layout consistency */
-  border-radius: 10px; /* Adds rounded corners */
-  overflow: hidden; /* Ensures the image respects the border radius */
-  margin-bottom: 20px; /* Space between each blog post link */
-  transition: border-color 0.3s ease, transform 0.3s ease; /* Smooth transitions for hover effects */
-  text-align: center; /* Center the text */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: Adds a subtle shadow for depth */
-}
-
-#blog-posts .blog-post {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-#blog-posts .blog-post.fade-in {
-  opacity: 1;
+  text-decoration: none; /* Removes underline from links */
+  color: inherit; /* Inherits text color from parent */
 }
 
 #blog-posts .blog-post img {
-  width: 90%; /* Reduces the size of the image to be slightly smaller */
+  width: 100%; /* Ensures the image scales with the container */
   height: auto; /* Maintain aspect ratio */
   display: block; /* Remove any extra space below the image */
-  margin: 0 auto; /* Center the image within the link */
-  border-radius: 10px; /* Ensures the image itself also has rounded corners if needed */
 }
 
 #blog-posts .blog-post a:hover {
-  border-color: #2E8B57; /* Pine green border on hover */
   transform: scale(1.05); /* Optional: Slightly increases size on hover for emphasis */
+  border-color: #2E8B57; /* Pine green border on hover */
 }
+
