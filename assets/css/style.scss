@@ -176,3 +176,27 @@ a {
   background-color: #cacaca;
 }
 
+@keyframes growAndMove {
+  0% {
+    transform: translateX(-10px);
+    width: 0%;
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+    width: calc(20% + 40px); /* Example final width, adjust as needed */
+  }
+}
+
+.bar {
+  animation: growAndMove 2s ease-in-out forwards;
+}
+
