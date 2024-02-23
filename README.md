@@ -13,3 +13,6 @@ BA (Hons) History | The Open University (July '21)
 Cineworld Cinemas Team Leader (Nov '17 - Aug '23)  
 
 Sainsbury's Supermarkets Team Member (Nov '14 - Jun '17)  
+
+## Personal Projects  
+
