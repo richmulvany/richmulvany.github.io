@@ -179,31 +179,16 @@ a {
 .icon-bar-container {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 10px; // Adjust space between icon and bar
 }
 
 .icon {
-  flex-shrink: 0; // Prevent the icon from shrinking
-  width: 24px; // Or whatever size you prefer
+  width: 24px; // Icon size
   height: auto;
+  flex-shrink: 0; // Prevents icon from shrinking
 }
 
-.bar.github {
-  animation: fluctuateBar1 2s ease-in-out;
-}
-
-.bar.linkedin {
-  animation: fluctuateBar2 2s ease-in-out;
-}
-
-.bar.hashnode {
-  animation: fluctuateBar3 2s ease-in-out;
-}
-
-.bar.email {
-  animation: fluctuateBar4 2s ease-in-out;
-}
-
+// Apply specific width and animation to each bar
 .bar {
   display: flex;
   align-items: center;
@@ -212,11 +197,25 @@ a {
   padding: 10px;
   border-radius: 5px;
   text-decoration: none;
-  min-width: 120px; /* Minimum width to ensure visibility */
+  // Removed the general width declaration here
 }
 
-/* Then set the specific initial widths (optional if using animations to set widths) */
-.bar.github { width: 70%; }
-.bar.linkedin { width: 50%; }
-.bar.hashnode { width: 80%; }
-.bar.email { width: 30%; }
+.bar.github {
+  width: 70%; // Starting width
+  animation: fluctuateBar1 2s ease-in-out forwards; // Apply fluctuation animation
+}
+
+.bar.linkedin {
+  width: 50%; // Starting width
+  animation: fluctuateBar2 2s ease-in-out forwards; // Apply fluctuation animation
+}
+
+.bar.hashnode {
+  width: 80%; // Starting width
+  animation: fluctuateBar3 2s ease-in-out forwards; // Apply fluctuation animation
+}
+
+.bar.email {
+  width: 30%; // Starting width
+  animation: fluctuateBar4 2s ease-in-out forwards; // Apply fluctuation animation
+}
