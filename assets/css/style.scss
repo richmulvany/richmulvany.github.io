@@ -205,18 +205,24 @@ a {
 }
 
 .bar.github {
+  background-color: #ccffcc; /* Light pale green */
   animation: growAndSettleGithub 2s ease-in-out forwards;
+  width: 130%;
 }
 
 .bar.linkedin {
+  background-color: #b3ffb3; /* A slightly richer pale green */
   animation: growAndSettleLinkedin 2s ease-in-out forwards;
 }
 
 .bar.hashnode {
+  background-color: #99ff99; /* A vivid yet pale green */
   animation: growAndSettleHashnode 2s ease-in-out forwards;
+  width: 150%
 }
 
 .bar.email {
+  background-color: #80ff80; /* A bright pale green, leaning towards lime */
   animation: growAndSettleEmail 2s ease-in-out forwards;
+  width: 120%
 }
-
