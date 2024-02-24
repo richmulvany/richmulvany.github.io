@@ -205,23 +205,23 @@ a {
 }
 
 .bar.github {
-  background-color: rgba(79, 121, 66, 0.8); /* Dark fern green with 80% opacity */
+  background-color: rgba(79, 121, 66, 0.7); /* Dark fern green with 70% opacity */
   animation: growAndSettleGithub 2s ease-in-out forwards;
 }
 
 .bar.linkedin {
-  background-color: rgba(59, 111, 88, 0.8); /* Deep sea green with 80% opacity */
+  background-color: rgba(59, 111, 88, 0.7); /* Deep sea green with 70% opacity */
   animation: growAndSettleLinkedin 1.5s ease-in-out forwards;
 }
 
 .bar.hashnode {
-  background-color: rgba(46, 80, 61, 0.8); /* Dark slate gray/green with 80% opacity */
-  animation: growAndSettleHashnode 2.5s ease-in-out forwards;
+  background-color: rgba(46, 80, 61, 0.7); /* Dark slate gray/green with 70% opacity */
+  animation: growAndSettleHashnode 2.3s ease-in-out forwards;
 }
 
 .bar.email {
-  background-color: rgba(53, 94, 59, 0.8); /* Dark moss green with 80% opacity */
-  animation: growAndSettleEmail 1s ease-in-out forwards;
+  background-color: rgba(53, 94, 59, 0.7); /* Dark moss green with 70% opacity */
+  animation: growAndSettleEmail 1.2s ease-in-out forwards;
 }
 
 /* Hide the text initially and transition its opacity */
