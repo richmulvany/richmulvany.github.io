@@ -201,21 +201,21 @@ a {
 }
 
 .bar.github {
-  width: 70%; // Starting width
+  width: 170%; // Starting width
   animation: fluctuateBar1 2s ease-in-out forwards; // Apply fluctuation animation
 }
 
 .bar.linkedin {
-  width: 50%; // Starting width
+  width: 70%; // Starting width
   animation: fluctuateBar2 2s ease-in-out forwards; // Apply fluctuation animation
 }
 
 .bar.hashnode {
-  width: 80%; // Starting width
+  width: 180%; // Starting width
   animation: fluctuateBar3 2s ease-in-out forwards; // Apply fluctuation animation
 }
 
 .bar.email {
-  width: 30%; // Starting width
+  width: 50%; // Starting width
   animation: fluctuateBar4 2s ease-in-out forwards; // Apply fluctuation animation
 }
