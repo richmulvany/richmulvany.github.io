@@ -190,7 +190,7 @@ a {
 
 // Apply specific width and animation to each bar
 .bar {
-  display: flex;
+  flex: 0 0 auto;
   align-items: center;
   background-color: #e0e0e0;
   color: #333;
