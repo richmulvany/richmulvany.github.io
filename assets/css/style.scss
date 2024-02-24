@@ -146,31 +146,31 @@ a {
   50% { width: 120%; }
   70% { width: 110%; }
   90% { width: 115%; }
-  100% { width: 70%; }
+  100% { width: 100%; }
 }
 
 @keyframes growAndSettleLinkedin {
   0% { width: 0%; }
   50% { width: 110%; }
-  70% { width: 100%; }
-  90% { width: 105%; }
-  100% { width: 50%; }
+  70% { width: 80%; }
+  90% { width: 95%; }
+  100% { width: 70%; }
 }
 
 @keyframes growAndSettleHashnode {
   0% { width: 0%; }
   50% { width: 130%; }
-  70% { width: 120%; }
+  70% { width: 100%; }
   90% { width: 125%; }
-  100% { width: 80%; }
+  100% { width: 120%; }
 }
 
 @keyframes growAndSettleEmail {
   0% { width: 0%; }
   50% { width: 90%; }
-  70% { width: 80%; }
-  90% { width: 85%; }
-  100% { width: 30%; }
+  70% { width: 65%; }
+  90% { width: 80%; }
+  100% { width: 55%; }
 }
 
 .bar-chart {
@@ -205,24 +205,22 @@ a {
 }
 
 .bar.github {
-  background-color: #ccffcc; /* Light pale green */
+  background-color: #8FBC8F; /* Muted sea green */
   animation: growAndSettleGithub 2s ease-in-out forwards;
-  width: 130%;
 }
 
 .bar.linkedin {
-  background-color: #b3ffb3; /* A slightly richer pale green */
+  background-color: #90EE90; /* Soft light green, slightly more vibrant */
   animation: growAndSettleLinkedin 2s ease-in-out forwards;
 }
 
 .bar.hashnode {
-  background-color: #99ff99; /* A vivid yet pale green */
+  background-color: #98FB98; /* Pale green, a touch softer */
   animation: growAndSettleHashnode 2s ease-in-out forwards;
-  width: 150%
 }
 
 .bar.email {
-  background-color: #80ff80; /* A bright pale green, leaning towards lime */
+  background-color: #778899; /* Light Slate Gray, for a muted contrast */
   animation: growAndSettleEmail 2s ease-in-out forwards;
-  width: 120%
 }
+
