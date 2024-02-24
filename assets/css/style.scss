@@ -151,30 +151,38 @@ a {
 .icon-bar-container {
   display: flex;
   align-items: center;
-  gap: 10px; /* Adjust space between icon and bar */
+  gap: 10px;
 }
 
 .icon {
-  width: 24px; /* Icon size */
+  flex-shrink: 0; // Prevent the icon from shrinking
+  width: 24px; // Or whatever size you prefer
   height: auto;
-  flex-shrink: 0; /* Prevents icon from shrinking */
 }
-
-.bar.github { width: 270%; }
-.bar.linkedin { width: 150%; }
-.bar.hashnode { width: 380%; }
-.bar.email { width: 130%; }
 
 .bar {
-  display: flex;
-  align-items: center;
+  flex: 0 0 auto; // Do not grow, do not shrink, initial size is auto
+  width: 70%; // Example width, adjust according to your needs
+  // If you're setting specific widths based on classes, ensure they are correctly applied here
   background-color: #e0e0e0;
-  color: #333;
   padding: 10px;
   border-radius: 5px;
-  text-decoration: none; /* Removes underline */
-  width: 360px;
+  text-decoration: none;
+  color: #333;
+  align-items: center;
+  display: flex;
+
+  // Ensure this rule is not being overridden by more specific selectors
+  &:hover {
+    background-color: #cacaca;
+  }
 }
+
+// Example specific widths for each bar
+.bar.github { width: 70%; }
+.bar.linkedin { width: 50%; }
+.bar.hashnode { width: 80%; }
+.bar.email { width: 30%; }
 
 
 /* Example hover effect */
