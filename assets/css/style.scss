@@ -211,16 +211,21 @@ a {
 
 .bar.linkedin {
   background-color: rgba(59, 111, 88, 0.8); /* Deep sea green with 80% opacity */
-  animation: growAndSettleLinkedin 2s ease-in-out forwards;
+  animation: growAndSettleLinkedin 1.5s ease-in-out forwards;
 }
 
 .bar.hashnode {
   background-color: rgba(46, 80, 61, 0.8); /* Dark slate gray/green with 80% opacity */
-  animation: growAndSettleHashnode 2s ease-in-out forwards;
+  animation: growAndSettleHashnode 2.5s ease-in-out forwards;
 }
 
 .bar.email {
   background-color: rgba(53, 94, 59, 0.8); /* Dark moss green with 80% opacity */
-  animation: growAndSettleEmail 2s ease-in-out forwards;
+  animation: growAndSettleEmail 1s ease-in-out forwards;
 }
 
+/* Hover effect */
+.bar:hover {
+  background-color: #4CAF50; /* Green color on hover */
+  transform: scale(1.05); /* Grow the bar size by 5% */
+}
