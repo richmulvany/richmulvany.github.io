@@ -224,8 +224,18 @@ a {
   animation: growAndSettleEmail 1s ease-in-out forwards;
 }
 
+/* Hide the text initially and transition its opacity */
+.bar span {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
 /* Hover effect */
 .bar:hover {
   background-color: #4CAF50; /* Green color on hover */
   transform: scale(1.05); /* Grow the bar size by 5% */
+}
+
+.bar:hover span {
+  opacity: 1; /* Make text fully visible */
 }
