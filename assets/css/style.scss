@@ -146,7 +146,7 @@ a {
   50% { width: 120%; }
   70% { width: 110%; }
   90% { width: 115%; }
-  100% { width: 100%; }
+  100% { width: 130%; }
 }
 
 @keyframes growAndSettleLinkedin {
@@ -154,7 +154,7 @@ a {
   50% { width: 110%; }
   70% { width: 80%; }
   90% { width: 95%; }
-  100% { width: 70%; }
+  100% { width: 90%; }
 }
 
 @keyframes growAndSettleHashnode {
@@ -162,15 +162,15 @@ a {
   50% { width: 130%; }
   70% { width: 100%; }
   90% { width: 125%; }
-  100% { width: 120%; }
+  100% { width: 150%; }
 }
 
 @keyframes growAndSettleEmail {
   0% { width: 0%; }
-  50% { width: 90%; }
+  50% { width: 100%; }
   70% { width: 65%; }
   90% { width: 80%; }
-  100% { width: 55%; }
+  100% { width: 85%; }
 }
 
 .bar-chart {
@@ -205,22 +205,22 @@ a {
 }
 
 .bar.github {
-  background-color: #4F7942; /* Dark fern green, reminiscent of dense foliage */
+  background-color: rgba(79, 121, 66, 0.8); /* Dark fern green with 80% opacity */
   animation: growAndSettleGithub 2s ease-in-out forwards;
 }
 
 .bar.linkedin {
-  background-color: #3B6F58; /* Deep sea green, evoking shadowed underbrush */
+  background-color: rgba(59, 111, 88, 0.8); /* Deep sea green with 80% opacity */
   animation: growAndSettleLinkedin 2s ease-in-out forwards;
 }
 
 .bar.hashnode {
-  background-color: #2E503D; /* Dark slate gray with a green undertone, like forest at dusk */
+  background-color: rgba(46, 80, 61, 0.8); /* Dark slate gray/green with 80% opacity */
   animation: growAndSettleHashnode 2s ease-in-out forwards;
 }
 
 .bar.email {
-  background-color: #355E3B; /* Dark moss green, suggesting a damp, earthy forest floor */
+  background-color: rgba(53, 94, 59, 0.8); /* Dark moss green with 80% opacity */
   animation: growAndSettleEmail 2s ease-in-out forwards;
 }
 
