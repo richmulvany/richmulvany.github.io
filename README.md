@@ -1,14 +1,16 @@
-# Data Science PGT Student
+# Data Governance Engineer
 
-#### Technical Skills: Mathematica, Python, R
+#### Technical Skills: Databricks, Mathematica, Python, R, SQL
 
 ## Education
 
-MSc Data Science | The University of Aberdeen (In Progress - End 2024) 
+MSc Data Science with Distinction | The University of Aberdeen (September '24)
 
 BA (Hons) History | The Open University (July '21)  
 
 ## Employment History
+
+Data Governance Engineer - Grayce Analyst for TotalEnergies (Nov '24 - Current)
 
 Cineworld Cinemas Team Leader (Nov '17 - Aug '23)  
 
