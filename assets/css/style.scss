@@ -195,6 +195,8 @@ a {
   }
 
   &:hover {
+    color: white;
+    background-color: #4CAF50; // Green color on hover
     transform: scale(1.025);
 
     span {
