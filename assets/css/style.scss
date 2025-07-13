@@ -141,41 +141,23 @@ a {
   border-color: #2E8B57; /* Pine green border on hover */
 }
 
-@keyframes smoothGrow {
-  from { width: 0%; }
-  to   { width: 100%; }
+@keyframes growFromZero {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
 }
 
-.github {
-  animation: smoothGrow 1.5s ease-out forwards;
-  width: 130%; /* final width target */
-  animation-delay: 0s;
+.bar {
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: growFromZero 1.5s ease-out forwards;
+  animation-fill-mode: forwards;
+  height: 40px;
 }
 
-.linkedin {
-  animation: smoothGrow 1.5s ease-out forwards;
-  width: 110%;
-  animation-delay: 0.1s;
-}
-
-.hashnode {
-  animation: smoothGrow 1.5s ease-out forwards;
-  width: 150%;
-  animation-delay: 0.2s;
-}
-
-.email {
-  animation: smoothGrow 1.5s ease-out forwards;
-  width: 100%;
-  animation-delay: 0.3s;
-}
-
-.bar-chart {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-}
+.bar.github   { transform: scaleX(1.3); }
+.bar.linkedin { transform: scaleX(1.1); }
+.bar.hashnode { transform: scaleX(1.5); }
+.bar.email    { transform: scaleX(1.0); }
 
 .icon-bar-container {
   display: flex;
