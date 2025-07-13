@@ -204,21 +204,21 @@ a {
 
   &.github {
     background-color: rgba(79, 121, 66, 0.7); // Dark fern green
-    animation: growAndSettleGithub 2.6s ease-out forwards;
+    animation: growAndSettleGithub 1.9s ease-out forwards;
   }
 
   &.linkedin {
     background-color: rgba(59, 111, 88, 0.7); // Deep sea green
-    animation: growAndSettleLinkedin 1.6s ease-out forwards;
+    animation: growAndSettleLinkedin 1.2s ease-out forwards;
   }
 
   &.hashnode {
     background-color: rgba(46, 80, 61, 0.7); // Dark slate green
-    animation: growAndSettleHashnode 3.5s ease-out forwards;
+    animation: growAndSettleHashnode 2.4s ease-out forwards;
   }
 
   &.email {
     background-color: rgba(53, 94, 59, 0.7); // Dark moss green
-    animation: growAndSettleEmail 2.2s ease-out forwards;
+    animation: growAndSettleEmail 1.5s ease-out forwards;
   }
 }
