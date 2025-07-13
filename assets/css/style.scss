@@ -22,10 +22,10 @@ a {
   width: 205px;
   height: auto;
   border-radius: 10px;
-  border: 1px solid #2E8B57;
+  border: 2px solid #2E8B57;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   display: block;
-  margin-left: 20px;
+  margin-left: 24px;
   margin-bottom: 20px;
 }
 
@@ -144,22 +144,22 @@ a {
 // Bar Growth Animations
 @keyframes growAndSettleGithub {
   from { width: 0%; }
-  to   { width: 65%; }
+  to   { width: 60%; }
 }
 
 @keyframes growAndSettleLinkedin {
   from { width: 0%; }
-  to   { width: 40%; }
+  to   { width: 35%; }
 }
 
 @keyframes growAndSettleHashnode {
   from { width: 0%; }
-  to   { width: 80%; }
+  to   { width: 70%; }
 }
 
 @keyframes growAndSettleEmail {
   from { width: 0%; }
-  to   { width: 55%; }
+  to   { width: 50%; }
 }
 
 // Bar Chart Section
@@ -195,8 +195,8 @@ a {
   }
 
   &:hover {
-    background-color: #4CAF50; // Green color on hover
-    transform: scale(1.05);
+    background-color: #ADEBB3; // Green color on hover
+    transform: scale(1.025);
 
     span {
       opacity: 1;
