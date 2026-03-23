@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+.scroll-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+/* index.css */
+html, body {
+  height: 100%;
+  overflow: hidden; /* prevents body scroll */
+}
+
+.scroll-container::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+.sticky {
+  scroll-snap-align: start;
+}
