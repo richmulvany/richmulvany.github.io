@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        heading: ['EB Garamond'], // fancy font for headers
+        heading: ['EB Garamond', 'serif'], // fancy font for headers
         sans: ['ui-sans-serif', 'system-ui'],      // keep default for body
       },
     },
