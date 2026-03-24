@@ -3,7 +3,7 @@ import { degrees } from "../../data/degrees";
 import { certificates } from "../../data/certificates";
 import QualificationPill from '../sections/QualificationPill';
 import SocialsBar from "../sections/SocialsBar";
-import ProfilePic from "../../assets/profile_pic.jpg";
+import ProfilePic from "../../assets/profile_pic.png";
 
 export default function Sidebar() {
   return (
