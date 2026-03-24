@@ -19,18 +19,22 @@ export default function Sidebar() {
         <p className="text-[#f98555] mb-6">
             Grayce Group Ltd for TotalEnergies SE
         </p>
+            {/* PIC */}
             <div className="relative">
                 <img 
                     src={ProfilePic}
                     alt="Profile Picture"
                     className="flex max-w-full rounded-3xl">
                 </img>
-                <div className="absolute bottom-2 left-26">
-                    <SocialsBar
-                    iconColor="#f98555"
-                    iconSize="32px"
-                    hoverColor="#d8d2d0"
-                    />
+                {/* SOCIALS */}
+                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/50 h-1/6 w-1/2 rounded-full">
+                    <div className="relative bottom-3/4 translate-y-3/4">
+                        <SocialsBar
+                        iconColor="#d8d2d0"
+                        iconSize="32px"
+                        hoverColor="#f98555"
+                        />
+                </div>
             </div>
         </div>
         {/* JOB PILL */}

@@ -60,8 +60,8 @@ export default function SocialsBar({ iconColor, hoverColor, iconSize }) {
         </div>
         {/* FIXED TEXT AREA */}
         <div 
-            className="absolute w-full top-9 h-6 mt-2 text-center text-sm transition-opacity duration-200"
-            style={{ color: iconColor}}
+            className="absolute w-full top-13 h-6 text-center text-sm transition-opacity duration-200"
+            style={{ color: hoverColor}}
         >
             {hoveredText ?? ""}
         </div>
