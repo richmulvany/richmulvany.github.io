@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState} from "react";
 import { Send, FileUser } from "lucide-react";
 import { socials } from "../../data/socials";
 
@@ -12,46 +12,59 @@ const socialSvgs = {
 };
 
 export default function SocialsBar({ iconColor, hoverColor, iconSize }) {
-  return (
-    <div className="flex justify-center gap-4 mt-4">
-      {socials.map((s, i) => {
-        const isSocial = s.icon === "social";
-        const isGeneric = s.icon === "generic";
-        return (
-          <a
-            key={i}
-            href={s.url || "#"}
-            title={s.description}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors"
-          >
-            {isSocial && socialSvgs[s.title] ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox={s.title === "GitHub" ? "0 0 496 512" : "0 0 448 512"}
-                fill={iconColor}
-                onMouseEnter={(e) => (e.currentTarget.style.fill = hoverColor)}
-                onMouseLeave={(e) => (e.currentTarget.style.fill = iconColor)}
-                style={{ width: iconSize, height: iconSize }}
-              >
-                {socialSvgs[s.title]}
-              </svg>
-            ) : isGeneric ? (
-              React.cloneElement(
-                s.title === "Email" ? <Send /> : <FileUser />,
-                {
-                  size: parseInt(iconSize),
-                  stroke: iconColor,
-                  onMouseEnter: (e) => (e.currentTarget.style.stroke = hoverColor),
-                  onMouseLeave: (e) => (e.currentTarget.style.stroke = iconColor),
-                  className: "transition-colors",
-                }
-              )
-            ) : null}
-          </a>
-        );
-      })}
+  const [hoveredText, setHoveredText] = useState("");
+  return (       
+    <div className="relative items-center mt-4">
+        {/* ICON ROW */}
+        <div className="flex justify-center gap-4 mt-4">
+        {socials.map((s, i) => {
+            const isSocial = s.icon === "social";
+            const isGeneric = s.icon === "generic";
+            return (
+                <a
+                key={i}
+                href={s.url || "#"}
+                title="Opens in a new tab"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors"
+                onMouseEnter={() => setHoveredText(s.description)}
+                onMouseLeave={() => setHoveredText("")}
+                >
+                {isSocial && socialSvgs[s.title] ? (
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox={s.title === "GitHub" ? "0 0 496 512" : "0 0 448 512"}
+                    fill={iconColor}
+                    onMouseEnter={(e) => (e.currentTarget.style.fill = hoverColor)}
+                    onMouseLeave={(e) => (e.currentTarget.style.fill = iconColor)}
+                    style={{ width: iconSize, height: iconSize }}
+                >
+                    {socialSvgs[s.title]}
+                </svg>
+                ) : isGeneric ? (
+                React.cloneElement(
+                    s.title === "Email" ? <Send /> : <FileUser />,
+                    {
+                    size: parseInt(iconSize),
+                    stroke: iconColor,
+                    onMouseEnter: (e) => (e.currentTarget.style.stroke = hoverColor),
+                    onMouseLeave: (e) => (e.currentTarget.style.stroke = iconColor),
+                    className: "transition-colors",
+                    }
+                )
+                ) : null}
+            </a>
+            );
+        })}
+        </div>
+        {/* FIXED TEXT AREA */}
+        <div 
+            className="absolute w-full top-9 h-6 mt-2 text-center text-sm transition-opacity duration-200"
+            style={{ color: iconColor}}
+        >
+            {hoveredText ?? ""}
+        </div>
     </div>
   );
 }

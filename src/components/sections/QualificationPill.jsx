@@ -1,15 +1,17 @@
-import { GraduationCap, BadgeCheck } from "lucide-react";
+import { GraduationCap, BadgeCheck, BriefcaseBusiness } from "lucide-react";
 
 
-export default function QualifcationPill({ QualType, qualification, iconColor }) {
+export default function QualificationPill({ QualType, qualification, iconColor }) {
 
-    let Icon;
+    const iconMap = {
+    degree: GraduationCap,
+    certificate: BadgeCheck,
+    job: BriefcaseBusiness,
+    };
 
-    if (QualType === "degree") {
-        Icon = GraduationCap;
-    } else if (QualType === "certificate") {
-        Icon = BadgeCheck;
-    }  
+    const Icon = iconMap[QualType];
+
+    if (!Icon) return null;
 
     return (
         <div className="relative mt-4">
@@ -17,7 +19,7 @@ export default function QualifcationPill({ QualType, qualification, iconColor })
             <div className="space-y-2 text-sm text-gray-600 pl-0 flex flex-inline">
             <Icon
                 className=" 
-                mt-1 ml-2
+                mt-2 ml-2
                 opacity-80
                 "
                 style={{ color: iconColor || "#f98555" }}

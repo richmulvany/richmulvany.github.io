@@ -1,4 +1,5 @@
 
+import { jobs } from "../../data/jobs";
 import { degrees } from "../../data/degrees";
 import { certificates } from "../../data/certificates";
 import QualificationPill from '../sections/QualificationPill';
@@ -18,20 +19,38 @@ export default function Sidebar() {
         <p className="text-[#f98555] mb-6">
             Grayce Group Ltd for TotalEnergies SE
         </p>
-        <img 
-            src={ProfilePic}
-            alt="Profile Picture"
-            className="flex max-w-full rounded-3xl">
-        </img>
-        <div className="mt-8">
-            <SocialsBar
-            iconColor="#d8d2d0"
-            iconSize="32px"
-            hoverColor="#f98555"
-            />
+            <div className="relative">
+                <img 
+                    src={ProfilePic}
+                    alt="Profile Picture"
+                    className="flex max-w-full rounded-3xl">
+                </img>
+                <div className="absolute bottom-2 left-26">
+                    <SocialsBar
+                    iconColor="#f98555"
+                    iconSize="32px"
+                    hoverColor="#d8d2d0"
+                    />
+            </div>
+        </div>
+        {/* JOB PILL */}
+        <div className="relative mt-8">
+        {jobs.map((job) => {
+        return (
+            <div
+                key={job.title}
+            >
+                <QualificationPill
+                QualType="job"
+                qualification={job}
+                iconColor="#f98555"
+                />
+            </div>
+            );
+        })}
         </div>
         {/* DEGREE PILLS */}
-        <div className="relative mt-8">
+        <div className="relative mt-4">
         {degrees.map((degree) => {
         return (
             <div
