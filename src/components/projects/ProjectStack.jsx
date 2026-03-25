@@ -98,15 +98,24 @@ export default function ProjectStack() {
 
           <div className="relative">
             {projects.toReversed().map((project, index) => {
-              const colors = colorPalette[index % colorPalette.length];
+              // If it's the first card visually
+              const isTopCard = index === 0;
+
+              const colors = isTopCard
+                ? {
+                    bg: "rgba(245, 245, 244)", // neutral top card color
+                    border: "rgba(249, 250, 251)",
+                    pill: "rgba(231, 229, 228, 0.6)",
+                  }
+                : colorPalette[index % colorPalette.length];
 
               return (
                 <motion.div
                   key={project.title}
                   className="sticky mt-8"
                   style={{
-                    top: `${index * 32}px`,
-                    zIndex: index - 1, 
+                    top: `${index * 44}px`,
+                    zIndex: index + 1,
                   }}
                 >
                   <ProjectCard

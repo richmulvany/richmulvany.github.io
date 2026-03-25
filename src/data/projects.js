@@ -43,7 +43,7 @@ export const projects = [
   },
   {	
     title: "Portfolio Redesign",
-    description: "I rebuilt my personal portfolio entirely from scratch using React, Tailwind CSS, and Vite. The site features a fully component-based structure with reusable sections for projects, skills, and contact information. I implemented dynamic data rendering so that project cards, tech bubbles, and links update automatically from structured data files. The design is fully responsive, adapting layouts and typography for different screen sizes, and includes interactive elements like hover effects, tooltips, and collapsible sections. Deployment is handled through GitHub Pages, with the project structured for easy updates and future expansion.",
+    description: "I rebuilt my personal portfolio entirely from scratch using React, Tailwind, and Vite. The site features a fully component-based structure with reusable sections for projects, skills, and contact information. I implemented dynamic data rendering so that project cards, tech bubbles, and links update automatically from structured data files. The design is responsive, adapting layouts for different screen sizes, and includes interactive elements like hover effects, tooltips, and collapsible sections. Deployment is handled through GitHub Pages, with the project structured for easy updates and future expansion.",
     tech: ["React", "Tailwind", "Vite"],
     link: "https://github.com/richmulvany/richmulvany.github.io",
     type: "proj",
