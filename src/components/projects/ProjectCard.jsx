@@ -36,15 +36,16 @@ export default function ProjectCard({ project, bgColor, borderColor, pillColor }
       </motion.h2>
 
       {/* Description */}
+
       <motion.p
-        className="text-gray-600 left-10 right-10 absolute"
-        initial={{ opacity: 0, top: "60%", y: -10 }}
+        className="text-gray-600 left-10 right-10 y-10 absolute"
+        initial={{ opacity: 0, x: -30 }}       // start slightly left
         animate={{
           opacity: expanded ? 1 : 0,
-          top: expanded ? "5rem" : "60%",
-          y: expanded ? 0 : -10,
+          x: expanded ? 0 : -30, 
+          top: "5rem"          // slide to original position on hover/lock
         }}
-        transition={{ duration: 0.4, delay: 0.1 }}
+        transition={{ duration: 0.3, delay: 0.1, ease: "easeOut" }}
       >
         {project.description}
       </motion.p>
@@ -80,7 +81,7 @@ export default function ProjectCard({ project, bgColor, borderColor, pillColor }
           opacity: expanded ? 1 : 0,
           y: expanded ? 0 : 8,
         }}
-        transition={{ duration: 0.4, delay: 0.15 }}
+        transition={{ duration: 0.3, delay: 0.1 }}
       >
         {Action}
       </motion.a>
