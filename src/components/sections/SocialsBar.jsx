@@ -16,7 +16,7 @@ export default function SocialsBar({ iconColor, hoverColor, iconSize }) {
   return (       
     <div className="relative items-center mt-4">
         {/* ICON ROW */}
-        <div className="flex justify-center gap-4 mt-4">
+        <div className="flex justify-center gap-4 mt-4 overflow-hidden">
         {socials.map((s, i) => {
             const isSocial = s.icon === "social";
             const isGeneric = s.icon === "generic";
@@ -60,8 +60,8 @@ export default function SocialsBar({ iconColor, hoverColor, iconSize }) {
         </div>
         {/* FIXED TEXT AREA */}
         <div 
-            className="absolute w-full top-9 h-6 mt-2 text-center text-sm transition-opacity duration-200"
-            style={{ color: iconColor}}
+            className="absolute w-full top-13 h-6 text-center text-sm transition-opacity duration-200"
+            style={{ color: hoverColor}}
         >
             {hoveredText ?? ""}
         </div>

@@ -26,9 +26,9 @@ export default function QualificationPill({ QualType, qualification, iconColor }
                 size={36}
             />
             <div className="ml-4 w-full flex flex-col bg-taupe-200 rounded-full">
-                <p className="ml-6 mt-2">
+                <p className="px-6 mt-2 truncate">
                     {qualification.title}</p>
-                <p className="ml-6 mb-2">
+                <p className="px-6 mb-2 truncate">
                     {qualification.description}</p>
             </div>
             <Icon

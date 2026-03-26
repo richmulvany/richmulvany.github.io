@@ -39,29 +39,29 @@ export default function ProjectStack() {
     {
       bg: "hsl(32, 70%, 94%)",
       border: "hsl(32, 75%, 86%)",
-      pill: "hsl(32, 80%, 96%)",
+      pill: "hsl(32, 80%, 91%)",
     },
     {
       bg: "hsl(32, 80%, 88%)",
       border: "hsl(32, 85%, 78%)",
-      pill: "hsl(32, 90%, 93%)",
+      pill: "hsl(32, 90%, 85%)",
     },
     {
       bg: "hsl(32, 90%, 82%)",
       border: "hsl(32, 95%, 70%)",
-      pill: "hsl(32, 100%, 89%)",
+      pill: "hsl(32, 100%, 79%)",
     },
 
     // Coming back down (mirror)
     {
       bg: "hsl(32, 80%, 88%)",
       border: "hsl(32, 85%, 78%)",
-      pill: "hsl(32, 90%, 93%)",
+      pill: "hsl(32, 90%, 85%)",
     },
     {
       bg: "hsl(32, 70%, 94%)",
       border: "hsl(32, 75%, 86%)",
-      pill: "hsl(32, 80%, 96%)",
+      pill: "hsl(32, 80%, 91%)",
     },
   ];
 
@@ -97,16 +97,25 @@ export default function ProjectStack() {
           </motion.h2>
 
           <div className="relative">
-            {projects.map((project, index) => {
-              const colors = colorPalette[index % colorPalette.length];
+            {projects.toReversed().map((project, index) => {
+              // If it's the first card visually
+              const isTopCard = index === 0;
+
+              const colors = isTopCard
+                ? {
+                    bg: "rgba(245, 245, 244)", // neutral top card color
+                    border: "rgba(249, 250, 251)",
+                    pill: "rgba(231, 229, 228, 0.6)",
+                  }
+                : colorPalette[index % colorPalette.length];
 
               return (
                 <motion.div
                   key={project.title}
                   className="sticky mt-8"
                   style={{
-                    top: `${index * 36}px`,
-                    zIndex: index + 1, 
+                    top: `${index * 44}px`,
+                    zIndex: index + 1,
                   }}
                 >
                   <ProjectCard
