@@ -16,7 +16,7 @@ export default function SocialsBar({ iconColor, hoverColor, iconSize }) {
   return (       
     <div className="relative items-center mt-4">
         {/* ICON ROW */}
-        <div className="flex justify-center gap-4 mt-4">
+        <div className="flex justify-center gap-4 mt-4 overflow-hidden">
         {socials.map((s, i) => {
             const isSocial = s.icon === "social";
             const isGeneric = s.icon === "generic";

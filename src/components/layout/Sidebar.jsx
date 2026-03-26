@@ -24,7 +24,7 @@ export default function Sidebar() {
                 <img 
                     src={ProfilePic}
                     alt="Profile Picture"
-                    className="flex max-w-full rounded-3xl">
+                    className="flex max-w-0 lg:max-w-full rounded-3xl">
                 </img>
                 {/* SOCIALS */}
                 <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/50 h-1/6 w-1/2 rounded-full">

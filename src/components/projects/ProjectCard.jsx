@@ -30,7 +30,7 @@ export default function ProjectCard({ project, bgColor, borderColor, pillColor }
           top: expanded ? "2rem" : "45%",
           transform: expanded ? "translateY(0) translateX(0)" : "translateY(-50%) translateX(0%)",
         }}
-        transition={{ type: "spring", stiffness: 300, damping: 25 }}
+        transition={{ type: "spring", stiffness: 300, damping: 50 }}
       >
         {project.title}
       </motion.h2>
@@ -38,12 +38,12 @@ export default function ProjectCard({ project, bgColor, borderColor, pillColor }
       {/* Description */}
 
       <motion.p
-        className="text-gray-600 left-10 right-10 y-10 absolute"
+        className="text-gray-600 absolute mt-10 left-10 right-10 overflow-hidden line-clamp-7"
         initial={{ opacity: 0, x: -30 }}       // start slightly left
         animate={{
           opacity: expanded ? 1 : 0,
           x: expanded ? 0 : -30, 
-          top: "5rem"          // slide to original position on hover/lock
+      // slide to original position on hover/lock
         }}
         transition={{ duration: 0.3, delay: 0.1, ease: "easeOut" }}
       >
@@ -52,7 +52,7 @@ export default function ProjectCard({ project, bgColor, borderColor, pillColor }
 
       {/* Pills */}
       <motion.div
-        className="flex flex-wrap gap-2 absolute left-8 right-0"
+        className="flex flex-wrap gap-2 absolute left-8"
         initial={{ top: "55%" }}
         animate={{
           top: expanded ? "auto" : "55%",

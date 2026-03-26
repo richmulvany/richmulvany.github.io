@@ -8,9 +8,12 @@ export default {
     extend: {
       fontFamily: {
         heading: ['EB Garamond', 'serif'], // fancy font for headers
-        sans: ['ui-sans-serif', 'system-ui'],      // keep default for body
+        sans: ['ui-sans-serif', 'system-ui'], // default body font
+      },
+      lineClamp: {
+        7: '7', // adds line-clamp-7
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
 };
