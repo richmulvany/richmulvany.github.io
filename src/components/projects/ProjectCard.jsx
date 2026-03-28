@@ -39,19 +39,6 @@ export default function ProjectCard({ project, bgColor, borderColor, pillColor }
         {project.title}
       </motion.h2>
 
-      {/* Title Mobile
-      <motion.h2
-        className="md:hidden text-2xl font-semibold text-center"
-
-        animate={{
-          top: expanded ? "auto" : "300%",
-          transform: expanded ? "translateY(0)" : "translateY(300%)"
-        }}
-        transition={{ type: "spring", stiffness: 300, damping: 50 }}
-      >
-        {project.title}
-      </motion.h2> */}
-
       {/* Description */}
       <motion.p
         className="hidden md:flex text-gray-600 absolute mt-10 left-10 right-10 overflow-hidden line-clamp-7"
@@ -88,23 +75,6 @@ export default function ProjectCard({ project, bgColor, borderColor, pillColor }
         ))}
       </motion.div>
 
-      {/* Pills Mobile */}
-      {/* <motion.div
-        className={`md:hidden flex flex-wrap gap-2 justify-center mt-4 ${
-          expanded ? "hidden" : "flex"
-        }`}
-      >
-        {project.tech.map((tech, i) => (
-          <span
-            key={i}
-            className="text-xs px-5 py-3 rounded-full text-gray-700"
-            style={{ backgroundColor: pillColor }}
-          >
-            {tech}
-          </span>
-        ))}
-      </motion.div> */}
-
       {/* Title + Pills Mobile */}
       <motion.div
         className="md:hidden flex flex-col items-center"
@@ -116,14 +86,14 @@ export default function ProjectCard({ project, bgColor, borderColor, pillColor }
         {/* Title */}
         <h2 
           style={{ fontFamily:"header" }}
-          className="tracking-tight leading-tight text-2xl font-semibold text-center"
+          className="px-4 tracking-tight leading-tight text-2xl font-semibold text-center"
           >
             {project.title}
         </h2>
 
         {/* Pills */}
         {!expanded && (
-          <div className="flex flex-wrap gap-2 justify-center mt-4">
+          <div className="flex flex-wrap gap-2 justify-center mt-8">
             {project.tech.map((tech, i) => (
               <span
                 key={i}
@@ -139,7 +109,7 @@ export default function ProjectCard({ project, bgColor, borderColor, pillColor }
 
       {/* Description Mobile */}
       <motion.p
-        className="md:hidden text-gray-600 mt-4 text-center overflow-hidden line-clamp-7"
+        className="md:hidden text-gray-600 mt-4 px-4 text-justify overflow-hidden line-clamp-12"
         initial={{ opacity: 0, y: 10 }}
         animate={{
           opacity: expanded ? 1 : 0,
