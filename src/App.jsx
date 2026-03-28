@@ -22,7 +22,7 @@ export default function App() {
       </aside>
 
       {/* Right scrollable project area */}
-      <main className="md:w-2/3 h-full overflow-y-auto p-10 space-y-12">
+      <main className="w-full md:w-2/3 h-full overflow-y-auto p-4 space-y-12">
         <ProjectStack />
       </main>
     </div>

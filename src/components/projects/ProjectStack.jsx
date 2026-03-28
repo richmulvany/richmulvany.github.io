@@ -67,7 +67,7 @@ export default function ProjectStack() {
 
   return (
     <section ref={containerRef} className="relative pt-16 flex justify-center">
-      <div className="relative w-full max-w-4xl">
+      <div className="relative w-full md:max-w-4xl">
 
         {/* BACKGROUND LAYER */}
         <div

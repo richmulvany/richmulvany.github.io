@@ -19,12 +19,15 @@ export default function ProjectCard({ project, bgColor, borderColor, pillColor }
       onClick={() => setLocked(!locked)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative rounded-4xl shadow-lg p-8 max-w-3xl h-96 mx-auto cursor-pointer overflow-hidden"
+      className="relative rounded-4xl shadow-lg p-6 md:p-8 flex flex-col justify-center md:justify-start md:flex-row md:max-w-3xl h-96 mx-auto cursor-pointer overflow-hidden"
+      animate={{
+        y: expanded ? -40 : 0
+      }}
       style={{ backgroundColor: bgColor }}
     >
       {/* Title */}
       <motion.h2
-        className="text-2xl font-semibold left-10 right-8 absolute"
+        className="hidden md:flex text-2xl font-semibold absolute left-0 right-0 px-10 text-left"
         initial={{ top: "50%", transform: "translateY(-50%)" }}
         animate={{
           top: expanded ? "2rem" : "45%",
@@ -35,10 +38,22 @@ export default function ProjectCard({ project, bgColor, borderColor, pillColor }
         {project.title}
       </motion.h2>
 
-      {/* Description */}
+      {/* Title Mobile
+      <motion.h2
+        className="md:hidden text-2xl font-semibold text-center"
 
+        animate={{
+          top: expanded ? "auto" : "300%",
+          transform: expanded ? "translateY(0)" : "translateY(300%)"
+        }}
+        transition={{ type: "spring", stiffness: 300, damping: 50 }}
+      >
+        {project.title}
+      </motion.h2> */}
+
+      {/* Description */}
       <motion.p
-        className="text-gray-600 absolute mt-10 left-10 right-10 overflow-hidden line-clamp-7"
+        className="hidden md:flex text-gray-600 absolute mt-10 left-10 right-10 overflow-hidden line-clamp-7"
         initial={{ opacity: 0, x: -30 }}       // start slightly left
         animate={{
           opacity: expanded ? 1 : 0,
@@ -52,7 +67,7 @@ export default function ProjectCard({ project, bgColor, borderColor, pillColor }
 
       {/* Pills */}
       <motion.div
-        className="flex flex-wrap gap-2 absolute left-8"
+        className="hidden md:flex flex-wrap gap-2 absolute left-0 right-0 px-8 justify-items-center"
         initial={{ top: "55%" }}
         animate={{
           top: expanded ? "auto" : "55%",
@@ -70,6 +85,64 @@ export default function ProjectCard({ project, bgColor, borderColor, pillColor }
           </span>
         ))}
       </motion.div>
+
+      {/* Pills Mobile */}
+      {/* <motion.div
+        className={`md:hidden flex flex-wrap gap-2 justify-center mt-4 ${
+          expanded ? "hidden" : "flex"
+        }`}
+      >
+        {project.tech.map((tech, i) => (
+          <span
+            key={i}
+            className="text-xs px-5 py-3 rounded-full text-gray-700"
+            style={{ backgroundColor: pillColor }}
+          >
+            {tech}
+          </span>
+        ))}
+      </motion.div> */}
+
+      {/* Title + Pills Mobile */}
+      <motion.div
+        className="md:hidden flex flex-col items-center"
+        animate={{
+          y: expanded ? 0 : "50%", 
+        }}
+        transition={{ type: "spring", stiffness: 300, damping: 40 }}
+      >
+        {/* Title */}
+        <h2 className="text-2xl font-semibold text-center">
+          {project.title}
+        </h2>
+
+        {/* Pills */}
+        {!expanded && (
+          <div className="flex flex-wrap gap-2 justify-center mt-4">
+            {project.tech.map((tech, i) => (
+              <span
+                key={i}
+                className="text-xs px-5 py-3 rounded-full text-gray-700"
+                style={{ backgroundColor: pillColor }}
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        )}
+      </motion.div>
+
+      {/* Description Mobile */}
+      <motion.p
+        className="md:hidden text-gray-600 mt-4 text-center overflow-hidden line-clamp-7"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{
+          opacity: expanded ? 1 : 0,
+          y: expanded ? 0 : 10,
+        }}
+      >
+        {project.description}
+      </motion.p>
 
       {/* Link */}
       <motion.a
