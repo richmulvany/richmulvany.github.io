@@ -15,7 +15,8 @@ export default function App() {
     return () => clearTimeout(timeout);
   }, []);
   return (
-    <div className="h-screen flex bg-taupe-200 text-gray-900 font-sans">
+    <div 
+      className="h-screen flex bg-taupe-200 text-gray-900">
       {/* Left sidebar */}
       <aside className="hidden md:flex md:w-1/3 flex-shrink-0 p-10 bg-stone-100 shadow-md">
         <Sidebar />

@@ -19,7 +19,7 @@ export default function ProjectCard({ project, bgColor, borderColor, pillColor }
       onClick={() => setLocked(!locked)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative rounded-4xl shadow-lg p-6 md:p-8 flex flex-col justify-center md:justify-start md:flex-row md:max-w-3xl h-96 mx-auto cursor-pointer overflow-hidden"
+      className="relative rounded-4xl shadow-lg p-6 md:p-8 flex flex-col justify-center md:justify-start md:flex-row md:max-w-3xl h-128 md:h-96 mx-auto cursor-pointer overflow-hidden"
       animate={{
         y: expanded ? -40 : 0
       }}
@@ -27,7 +27,8 @@ export default function ProjectCard({ project, bgColor, borderColor, pillColor }
     >
       {/* Title */}
       <motion.h2
-        className="hidden md:flex text-2xl font-semibold absolute left-0 right-0 px-10 text-left"
+        className="tracking-tight leading-tight hidden md:flex text-2xl font absolute left-0 right-0 px-10 text-left"
+        style={{ fontFamily: "header" }}
         initial={{ top: "50%", transform: "translateY(-50%)" }}
         animate={{
           top: expanded ? "2rem" : "45%",
@@ -54,7 +55,8 @@ export default function ProjectCard({ project, bgColor, borderColor, pillColor }
       {/* Description */}
       <motion.p
         className="hidden md:flex text-gray-600 absolute mt-10 left-10 right-10 overflow-hidden line-clamp-7"
-        initial={{ opacity: 0, x: -30 }}       // start slightly left
+        initial={{ opacity: 0, x: -30 }}  
+             // start slightly left
         animate={{
           opacity: expanded ? 1 : 0,
           x: expanded ? 0 : -30, 
@@ -112,8 +114,11 @@ export default function ProjectCard({ project, bgColor, borderColor, pillColor }
         transition={{ type: "spring", stiffness: 300, damping: 40 }}
       >
         {/* Title */}
-        <h2 className="text-2xl font-semibold text-center">
-          {project.title}
+        <h2 
+          style={{ fontFamily:"header" }}
+          className="tracking-tight leading-tight text-2xl font-semibold text-center"
+          >
+            {project.title}
         </h2>
 
         {/* Pills */}
@@ -148,7 +153,8 @@ export default function ProjectCard({ project, bgColor, borderColor, pillColor }
       <motion.a
         href={project.link}
         target="_blank"
-        className="text-sm text-orange-600 hover:text-orange-400 absolute bottom-[2rem] left-10 right-0"
+        style={{ fontFamily:"header" }}
+        className="tracking-tight leading-tight text-sm text-orange-600 hover:text-orange-400 absolute bottom-[2rem] left-10 right-0"
         initial={{ opacity: 0, y: 8 }}
         animate={{
           opacity: expanded ? 1 : 0,

@@ -88,7 +88,7 @@ export default function ProjectStack() {
         />
 
         {/* CONTENT */}
-        <div className="relative z-10 p-6">
+        <div className="relative z-10 p-2 md:p-0">
           <motion.h2
             style={{ opacity, y }}
             className="text-5xl text-center mb-36 mt-30"
