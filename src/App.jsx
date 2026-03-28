@@ -17,12 +17,12 @@ export default function App() {
   return (
     <div className="h-screen flex bg-taupe-200 text-gray-900 font-sans">
       {/* Left sidebar */}
-      <aside className="w-1/3 flex-shrink-0 p-10 bg-stone-100 shadow-md">
+      <aside className="hidden md:flex md:w-1/3 flex-shrink-0 p-10 bg-stone-100 shadow-md">
         <Sidebar />
       </aside>
 
       {/* Right scrollable project area */}
-      <main className="w-2/3 h-full overflow-y-auto p-10 space-y-12">
+      <main className="w-full md:w-2/3 h-full overflow-y-auto p-4 space-y-12">
         <ProjectStack />
       </main>
     </div>

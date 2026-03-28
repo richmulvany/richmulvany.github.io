@@ -67,7 +67,7 @@ export default function ProjectStack() {
 
   return (
     <section ref={containerRef} className="relative pt-16 flex justify-center">
-      <div className="relative w-full max-w-4xl">
+      <div className="relative w-full md:max-w-4xl">
 
         {/* BACKGROUND LAYER */}
         <div
@@ -114,7 +114,7 @@ export default function ProjectStack() {
                   key={project.title}
                   className="sticky mt-8"
                   style={{
-                    top: `${index * 44}px`,
+                    top: `${index * 57}px`,
                     zIndex: index + 1,
                   }}
                 >
