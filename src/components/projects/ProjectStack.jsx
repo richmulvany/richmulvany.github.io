@@ -89,12 +89,12 @@ export default function ProjectStack() {
 
         {/* CONTENT */}
         <div className="relative z-10 p-2 md:p-0">
-          <motion.h2
+          <motion.h1
             style={{ opacity, y }}
             className="text-5xl text-center mb-36 mt-30"
           >
             My Projects
-          </motion.h2>
+          </motion.h1>
 
           <div className="relative">
             {projects.toReversed().map((project, index) => {

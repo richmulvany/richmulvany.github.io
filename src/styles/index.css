@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: "Junicode";
-  src: url("../assets/fonts/JunicodeVF-Roman.woff2") format("woff2");
+  src: url("/fonts/JunicodeVF-Roman.woff2") format("woff2");
   font-weight: 300 800; /* variable font range */
   font-style: normal;
   font-display: swap;
@@ -13,7 +13,7 @@
 
 @font-face {
   font-family: "Junicode";
-  src: url("../assets/fonts/JunicodeVF-Italic.woff2") format("woff2");
+  src: url("/fonts/JunicodeVF-Italic.woff2") format("woff2");
   font-weight: 300 800;
   font-style: italic;
   font-display: swap;
@@ -22,6 +22,16 @@
 :root {
   --font-sans: "Halyard Display", ui-sans-serif, system-ui, sans-serif;
   --font-heading: "Junicode", serif;
+}
+
+@layer base {
+  h1, html {
+    font-family: "Halyard Display", sans-serif;
+  }
+
+  h2,h3 {
+    font-family: "Junicode", serif;
+  }
 }
 
 .scroll-container {

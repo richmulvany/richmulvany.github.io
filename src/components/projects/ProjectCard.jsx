@@ -85,7 +85,7 @@ export default function ProjectCard({ project, bgColor, borderColor, pillColor }
       >
         {/* Title */}
         <h2 
-          style={{ fontFamily:"header" }}
+          style={{ fontFamily:"Junicode" }}
           className="px-4 tracking-tight leading-tight text-2xl font-semibold text-center"
           >
             {project.title}
@@ -93,7 +93,7 @@ export default function ProjectCard({ project, bgColor, borderColor, pillColor }
 
         {/* Pills */}
         {!expanded && (
-          <div className="flex flex-wrap gap-2 justify-center mt-8">
+          <div className="flex flex-wrap gap-2 justify-center mt-24">
             {project.tech.map((tech, i) => (
               <span
                 key={i}
@@ -123,7 +123,7 @@ export default function ProjectCard({ project, bgColor, borderColor, pillColor }
       <motion.a
         href={project.link}
         target="_blank"
-        style={{ fontFamily:"header" }}
+        style={{ fontFamily:"Junicode" }}
         className="tracking-tight leading-tight text-sm text-orange-600 hover:text-orange-400 absolute bottom-[2rem] left-10 right-0"
         initial={{ opacity: 0, y: 8 }}
         animate={{
