@@ -114,7 +114,7 @@ export default function ProjectStack() {
                   key={project.title}
                   className="sticky mt-8"
                   style={{
-                    top: `${index * 44}px`,
+                    top: `${index * 57}px`,
                     zIndex: index + 1,
                   }}
                 >
