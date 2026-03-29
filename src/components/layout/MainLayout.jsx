@@ -1,6 +1,6 @@
 export default function MainLayout({ sidebar, children }) {
   return (
-    <div className="h-screen flex bg-gray-50 text-gray-900 font-sans">
+    <div className="h-screen flex bg-gray-50 text-gray-900">
       {/* Left column / sidebar */}
       <aside className="hidden md:flex md:w-1/3 flex-shrink-0 p-10 bg-gray-50">
         {sidebar}

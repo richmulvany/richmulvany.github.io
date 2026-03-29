@@ -1,5 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url(https://db.onlinewebfonts.com/c/c4d8819fda4c3fd79e36cedcc8d422bb?family=Halyard+Display); 
+
+@font-face {
+  font-family: "Junicode";
+  src: url("/fonts/JunicodeVF-Roman.woff2") format("woff2");
+  font-weight: 300 800; /* variable font range */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode";
+  src: url("/fonts/JunicodeVF-Italic.woff2") format("woff2");
+  font-weight: 300 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --font-sans: "Halyard Display", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Junicode", serif;
+}
+
+@layer base {
+  h1, html {
+    font-family: "Halyard Display", sans-serif;
+  }
+
+  h2,h3 {
+    font-family: "Junicode", serif;
+  }
+}
 
 .scroll-container {
   scroll-snap-type: y mandatory;
@@ -7,10 +40,9 @@
   scroll-behavior: smooth;
 }
 
-/* index.css */
 html, body {
-  height: 100%;
-  overflow: hidden; /* prevents body scroll */
+  min-height: 100%;
+
 }
 
 .scroll-container::-webkit-scrollbar {

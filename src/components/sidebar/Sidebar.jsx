@@ -2,21 +2,24 @@
 import { jobs } from "../../data/jobs";
 import { degrees } from "../../data/degrees";
 import { certificates } from "../../data/certificates";
-import QualificationPill from '../sections/QualificationPill';
-import SocialsBar from "../sections/SocialsBar";
+import QualificationPill from './QualificationPill';
+import SocialsBar from "./SocialsBar";
 import ProfilePic from "../../assets/profile_pic.png";
 
 export default function Sidebar() {
   return (
-    <div className="flex flex-col justify-between h-full">
+    <div 
+    style={{ fontFamily: 'var(--font-heading)' }} 
+    className="flex flex-col justify-between h-full">
       <div>
-        <h1 className="text-4xl font-semibold mb-4">Richard Mulvany</h1>
+        <h1 
+        className="font-sans text-4xl font-semibold mb-4">Richard Mulvany</h1>
 
-        <p className="text-gray-500 mb-1">
+        <p className="text-gray-500 tracking-tight leading-tight mb-1">
             Data Governence Engineer | MSc Data Science
         </p>
 
-        <p className="text-[#f98555] mb-6">
+        <p className="text-[#f98555] tracking-tight leading-tight mb-6">
             Grayce Group Ltd for TotalEnergies SE
         </p>
             {/* PIC */}
@@ -27,7 +30,7 @@ export default function Sidebar() {
                     className="flex max-w-0 lg:max-w-full rounded-3xl">
                 </img>
                 {/* SOCIALS */}
-                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/50 h-1/6 w-1/2 rounded-full">
+                <div className="font-sans absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/50 h-1/6 w-1/2 rounded-full">
                     <div className="relative bottom-3/4 translate-y-3/4">
                         <SocialsBar
                         iconColor="#d8d2d0"
@@ -38,7 +41,7 @@ export default function Sidebar() {
             </div>
         </div>
         {/* JOB PILL */}
-        <div className="relative mt-8">
+        <div className="font-sans relative mt-8">
         {jobs.map((job) => {
         return (
             <div
@@ -54,7 +57,7 @@ export default function Sidebar() {
         })}
         </div>
         {/* DEGREE PILLS */}
-        <div className="relative mt-4">
+        <div className="font-sans relative mt-4">
         {degrees.map((degree) => {
         return (
             <div
@@ -71,7 +74,7 @@ export default function Sidebar() {
         </div>
 
         {/* CERT PILLS */}
-        <div className="relative mt-4">
+        <div className="font-sans relative mt-4">
         {certificates.map((certificate) => {
         return (
             <div
