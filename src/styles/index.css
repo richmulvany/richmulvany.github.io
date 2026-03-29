@@ -41,8 +41,8 @@
 }
 
 html, body {
-  height: 100%;
-  overflow: hidden; /* prevents body scroll */
+  min-height: 100%;
+
 }
 
 .scroll-container::-webkit-scrollbar {
