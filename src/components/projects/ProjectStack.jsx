@@ -41,20 +41,35 @@ export default function ProjectStack() {
   ];
 
   return (
-    <section className="relative pt-16">
       <div className="relative w-full md:max-w-4xl mx-auto">
 
         {/* Background */}
-        <div className="absolute inset-0 rounded-3xl pointer-events-none backdrop-blur-md" />
+        <div
+          className="absolute inset-0 rounded-3xl"
+          style={{
+            background: `
+              linear-gradient(
+                to bottom,
+                rgba(245, 245, 244,1.0) 0%,
+                rgba(245, 245, 244,0.1) 10%,
+                rgba(245, 245, 244,0.0) 50%,
+                rgba(245, 245, 244,0.1) 90%,
+                rgba(245, 245, 244,1.0) 100%
+              )
+            `,
+            backdropFilter: "blur(10px)",
+          }}
+        />
 
         {/* Content */}
+      <section className="relative pt-16 md:pt-38">
         <div className="relative z-10">
-          <motion.h1
+          <motion.p
             style={{ opacity, y }}
             className="text-4xl md:text-5xl text-center mb-20 md:mb-36"
           >
             My Projects
-          </motion.h1>
+          </motion.p>
 
           <div className="relative">
             {projects.toReversed().map((project, index) => {
@@ -82,8 +97,9 @@ export default function ProjectStack() {
           </div>
         </div>
 
-        <div className="h-24 md:h-[14.4vh]" />
+        <div className="h-24 md:h-[12.2vh]" />
+         </section>
       </div>
-    </section>
+   
   );
 }

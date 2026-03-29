@@ -16,7 +16,7 @@ export default function MobileProjectCard({ project, bgColor, pillColor }) {
             e.stopPropagation();
             setLocked((p) => !p);
         }}
-        className="relative rounded-3xl shadow-lg cursor-pointer overflow-hidden"
+        className="relative rounded-3xl ml-4 mr-4 shadow-lg cursor-pointer overflow-hidden"
         style={{ backgroundColor: bgColor }}
         layout
         transition={{ layout: { duration: 0.3, ease: "easeInOut" } }}
@@ -42,13 +42,13 @@ export default function MobileProjectCard({ project, bgColor, pillColor }) {
                 transition={{ layout: { duration: 0.3, ease: "easeInOut" } }}
                 >
                 {project.tech.map((t, i) => (
-                    <span
+                    <p
                     key={i}
                     className="text-sm px-5 py-2 rounded-full font-medium"
                     style={{ backgroundColor: pillColor }}
                     >
-                    {t}
-                    </span>
+                        {t}
+                    </p>
                 ))}
                 </motion.div>
             )}

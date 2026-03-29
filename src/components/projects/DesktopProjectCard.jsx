@@ -16,7 +16,7 @@ export default function DesktopProjectCard({ project, bgColor, pillColor }) {
       onClick={() => setLocked((p) => !p)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative rounded-4xl shadow-lg p-8 flex h-96 mx-auto cursor-pointer overflow-hidden"
+      className="relative rounded-4xl shadow-lg p-8 ml-8 mr-8 flex h-96 mx-auto cursor-pointer overflow-hidden"
       style={{ backgroundColor: bgColor }}
     >
       <motion.h2
@@ -45,10 +45,10 @@ export default function DesktopProjectCard({ project, bgColor, pillColor }) {
         }}
       >
         {project.tech.map((t, i) => (
-          <span key={i} className="text-sm px-5 py-3 rounded-full"
+          <h1 key={i} className="px-5 py-3 rounded-full"
             style={{ backgroundColor: pillColor }}>
             {t}
-          </span>
+          </h1>
         ))}
       </motion.div>
 

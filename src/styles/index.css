@@ -20,13 +20,17 @@
 }
 
 :root {
-  --font-sans: "Halyard Display", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-heading: "Junicode", serif;
 }
 
 @layer base {
-  h1, html {
-    font-family: "Halyard Display", sans-serif;
+  html {
+    font-family: "Inter", sans-serif;
+  }
+  
+  h1 {
+    font-family: "Halyard Display", serif;
   }
 
   h2,h3 {
