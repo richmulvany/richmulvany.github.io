@@ -20,7 +20,7 @@ export default function DesktopProjectCard({ project, bgColor, pillColor }) {
       style={{ backgroundColor: bgColor }}
     >
       <motion.h2
-        className="tracking-tight leading-tight absolute left-0 right-0 px-10 text-2xl font-semibold"
+        className="tracking-tight leading-tight absolute left-0 right-0 px-10 text-3xl"
         initial={{ top: "50%", transform: "translateY(-50%)" }}
         animate={{
           top: expanded ? "2rem" : "45%",

@@ -23,7 +23,7 @@ export default function QualificationPill({ QualType, qualification, iconColor }
         />
 
         {/* Pill */}
-        <div className="flex flex-col justify-center bg-taupe-200 rounded-full px-6 py-2 w-full min-h-[56px]">
+        <div className="flex flex-col justify-center bg-taupe-200 rounded-full px-6 py-2 w-full mr-[36px] min-h-[56px]">
           
           <h1 className="truncate leading-tight">
             {qualification.title}
