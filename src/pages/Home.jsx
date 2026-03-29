@@ -1,5 +1,5 @@
 import MainLayout from "../components/layout/MainLayout";
-import Sidebar from "../components/sidebar/Sidebar";
+import Sidebar from "../components/profile/Sidebar";
 import ProjectStack from "../components/projects/ProjectStack";
 
 export default function Home() {
