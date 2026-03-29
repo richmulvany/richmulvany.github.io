@@ -9,25 +9,27 @@ import ProfilePic from "../../assets/profile_pic.png";
 export default function Sidebar() {
   return (
     <div 
-    style={{ fontFamily: 'var(--font-heading)' }} 
     className="flex flex-col justify-between h-full">
       <div>
-        <h1 
-        className="font-sans text-4xl font-semibold mb-4">Richard Mulvany</h1>
+        <div className="ml-0">
+            <p 
+            className="text-5xl mb-2">Richard Mulvany
+            </p>
 
-        <p className="text-gray-500 tracking-tight leading-tight mb-1">
-            Data Governence Engineer | MSc Data Science
-        </p>
+            <h1 className="ml-[0.1rem] text-gray-500 text-lg mb-0">
+                Data Governance Engineer | MSc Data Science
+            </h1>
 
-        <p className="text-[#f98555] tracking-tight leading-tight mb-6">
-            Grayce Group Ltd for TotalEnergies SE
-        </p>
+            <h1 className="ml-[0.1rem] text-[#f98555] text-lg mb-6">
+                Grayce Group Ltd for TotalEnergies SE
+            </h1>
+        </div>
             {/* PIC */}
             <div className="relative">
                 <img 
                     src={ProfilePic}
                     alt="Profile Picture"
-                    className="flex max-w-0 lg:max-w-full rounded-3xl">
+                    className="flex max-w-0 lg:max-w-full rounded-2xl">
                 </img>
                 {/* SOCIALS */}
                 <div className="font-sans absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/50 h-1/6 w-1/2 rounded-full">

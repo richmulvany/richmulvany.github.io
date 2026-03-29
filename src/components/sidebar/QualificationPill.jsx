@@ -1,45 +1,42 @@
 import { GraduationCap, BadgeCheck, BriefcaseBusiness } from "lucide-react";
 
-
 export default function QualificationPill({ QualType, qualification, iconColor }) {
-
-    const iconMap = {
+  const iconMap = {
     degree: GraduationCap,
     certificate: BadgeCheck,
     job: BriefcaseBusiness,
-    };
+  };
 
-    const Icon = iconMap[QualType];
+  const Icon = iconMap[QualType];
 
-    if (!Icon) return null;
+  if (!Icon) return null;
 
-    return (
-        <div className="relative mt-4">
+  return (
+    <div className="mt-4">
+      <div className="flex items-center space-x-4 text-gray-600">
+        
+        {/* Icon */}
+        <Icon
+          className="opacity-80 flex-shrink-0"
+          style={{ color: iconColor || "#f98555" }}
+          size={36}
+        />
 
-            <div className="space-y-2 text-sm text-gray-600 pl-0 flex flex-inline">
-            <Icon
-                className=" 
-                mt-2 ml-2
-                opacity-80
-                "
-                style={{ color: iconColor || "#f98555" }}
-                size={36}
-            />
-            <div className="ml-4 w-full flex flex-col bg-taupe-200 rounded-full">
-                <p className="px-6 mt-2 truncate">
-                    {qualification.title}</p>
-                <p className="px-6 mb-2 truncate">
-                    {qualification.description}</p>
-            </div>
-            <Icon
-                className=" 
-                mt-1 ml-2
-                text-orange-600 
-                opacity-0
-                "
-                size={36}
-            />
-            </div>
+        {/* Pill */}
+        <div className="flex flex-col justify-center bg-taupe-200 rounded-full px-6 py-2 w-full mr-[36px] min-h-[56px]">
+          
+          <h1 className="truncate leading-tight">
+            {qualification.title}
+          </h1>
+
+          {qualification.description && (
+            <h1 className="truncate text-sm opacity-80 leading-tight">
+              {qualification.description}
+            </h1>
+          )}
+
         </div>
-    )
+      </div>
+    </div>
+  );
 }
