@@ -5,7 +5,7 @@ import QualificationPill from "./QualificationPill";
 
 export default function QualificationsList() {
   return (
-    <div className="mt-6">
+    <div className="">
       {jobs.map((j) => (
         <QualificationPill key={j.title} QualType="job" qualification={j} />
       ))}
