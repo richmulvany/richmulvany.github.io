@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import useProjectCardState from "../../hooks/useProjectCardState";
+import Color from "color";
 
 export default function MobileProjectCard({ project, bgColor, pillColor }) {
   const { expanded, setLocked } = useProjectCardState();
@@ -37,7 +38,7 @@ export default function MobileProjectCard({ project, bgColor, pillColor }) {
 
             {!expanded && (
                 <motion.div
-                className="flex flex-wrap justify-center mt-6 gap-3"
+                className="flex flex-wrap justify-center px-8 mt-6 gap-3"
                 layout
                 transition={{ layout: { duration: 0.3, ease: "easeInOut" } }}
                 >
@@ -45,7 +46,10 @@ export default function MobileProjectCard({ project, bgColor, pillColor }) {
                     <h1
                     key={i}
                     className="text-md px-5 py-2 rounded-full font-medium"
-                    style={{ backgroundColor: pillColor }}
+                    style={{ 
+                        backgroundColor: pillColor,
+                        color: Color(pillColor).darken(0.55).hex() 
+                    }}
                     >
                         {t}
                     </h1>

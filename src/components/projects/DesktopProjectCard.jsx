@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import useProjectCardState from "../../hooks/useProjectCardState";
+import Color from "color";
 
 export default function DesktopProjectCard({ project, bgColor, pillColor }) {
   const { expanded, setHovered, setLocked } = useProjectCardState();
@@ -46,7 +47,10 @@ export default function DesktopProjectCard({ project, bgColor, pillColor }) {
       >
         {project.tech.map((t, i) => (
           <h1 key={i} className="px-5 py-3 rounded-full"
-            style={{ backgroundColor: pillColor }}>
+            style={{ 
+                backgroundColor: pillColor ,
+                color: Color(pillColor).darken(0.55).hex()
+            }}>
             {t}
           </h1>
         ))}
