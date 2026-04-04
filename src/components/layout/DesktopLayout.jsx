@@ -1,3 +1,7 @@
+/**
+ * Desktop specific layout. 
+ * Sidebar fixed left, scrollable main content right.
+ */
 export default function DesktopLayout({ sidebar, children }) {
   return (
     <div className="flex bg-taupe-200 text-gray-900">
