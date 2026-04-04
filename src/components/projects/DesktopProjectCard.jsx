@@ -2,8 +2,11 @@ import { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import useProjectCardState from '../../hooks/useProjectCardState';
 import Color from 'color';
-import lineclamp from '@tailwindcss/line-clamp';
 
+/**
+ * Desktop project card.
+ * Expands on hover or click.
+ */
 export default function DesktopProjectCard({ project, bgColor, pillColor }) {
   const { expanded, setHovered, setLocked } = useProjectCardState();
   const [titleHeight, setTitleHeight] = useState(0);
@@ -13,7 +16,7 @@ export default function DesktopProjectCard({ project, bgColor, pillColor }) {
     if (titleRef.current) {
       setTitleHeight(titleRef.current.offsetHeight);
     }
-  }, [project.title, expanded]); // re-measure if title or expanded changes
+  }, [project.title, expanded]);
 
   const actionMap = {
     blog: 'Read Blog →',
@@ -27,7 +30,7 @@ export default function DesktopProjectCard({ project, bgColor, pillColor }) {
       onClick={() => setLocked((p) => !p)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative rounded-4xl shadow-lg p-8 ml-8 mr-8 flex h-96 mx-auto cursor-pointer overflow-hidden"
+      className="relative rounded-4xl shadow-lg p-8 mx-8 flex h-96 cursor-pointer overflow-hidden"
       style={{ backgroundColor: bgColor }}
     >
       <motion.h2
@@ -44,14 +47,14 @@ export default function DesktopProjectCard({ project, bgColor, pillColor }) {
 
       <motion.p
         className="absolute left-10 right-10 text-md text-gray-600 text-justify md:line-clamp-5 lg:line-clamp-10"
-        style={{ top: expanded ? titleHeight + 40 : 'auto' }} // 16px extra spacing
+        style={{ top: expanded ? titleHeight + 40 : 'auto' }}
         animate={{ opacity: expanded ? 1 : 0 }}
       >
         {project.description}
       </motion.p>
 
       <motion.div
-        className="flex flex-wrap gap-2 absolute left-0 right-0 px-8 justify-start"
+        className="flex flex-wrap gap-2 absolute left-0 right-0 px-8"
         animate={{
           bottom: expanded ? '4.5rem' : 'auto',
           top: expanded ? 'auto' : '55%',
@@ -73,7 +76,7 @@ export default function DesktopProjectCard({ project, bgColor, pillColor }) {
 
       <motion.a
         href={project.link}
-        className="tracking-tight leading-tight absolute bottom-8 left-10 text-orange-600"
+        className="absolute bottom-8 left-10 text-orange-600"
         animate={{ opacity: expanded ? 1 : 0 }}
       >
         <h2>{Action}</h2>

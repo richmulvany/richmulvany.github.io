@@ -1,3 +1,6 @@
+/**
+ * SVG icon map for custom icons.
+ */
 const svgIcons = {
   GitHub: {
     viewBox: '0 0 496 512',
@@ -9,14 +12,15 @@ const svgIcons = {
   },
 };
 
+/**
+ * Renders either a Lucide icon or custom SVG icon.
+ */
 export default function SocialIcon({ social, size = 20, className = '' }) {
-  // Lucide
   if (social.type === 'lucide' && social.icon) {
     const Icon = social.icon;
     return <Icon size={size} className={className} />;
   }
 
-  // Custom SVG
   if (social.type === 'svg') {
     const icon = svgIcons[social.title];
     if (!icon) return null;

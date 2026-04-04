@@ -1,9 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, X } from 'lucide-react';
 import { socials } from '../../data/socials';
 import SocialIcon from './SocialIcon';
 
+/**
+ * Floating action button for mobile socials.
+ */
 export default function SocialsFab({ show }) {
   const [open, setOpen] = useState(false);
 
@@ -21,7 +24,6 @@ export default function SocialsFab({ show }) {
         transition={{ duration: 0.25 }}
         className="fixed top-4 left-3 z-50"
       >
-        {/* WRAPPER handles tap scaling */}
         <motion.div whileTap={{ scale: 0.94 }}>
           <motion.div
             layout
@@ -38,19 +40,17 @@ export default function SocialsFab({ show }) {
               damping: 28,
               default: { duration: 0.25, ease: 'easeInOut' },
             }}
-            className="bg-orange-600/50 border-orange-500 border-opacity-20 backdrop-blur-md shadow-lg overflow-hidden relative"
+            className="bg-orange-600/50 backdrop-blur-md shadow-lg overflow-hidden relative"
           >
-            {/* CLOSED */}
             {!open && (
               <button
                 onClick={() => setOpen(true)}
                 className="w-full h-full flex items-center justify-center text-white"
               >
-                <Send size={21} style={{ transform: 'translateX(-2px) translateY(1px)' }} />
+                <Send size={21} />
               </button>
             )}
 
-            {/* OPEN */}
             {open && (
               <>
                 <button
@@ -66,10 +66,10 @@ export default function SocialsFab({ show }) {
                   transition={{ duration: 0.15 }}
                   className="p-6 pb-3"
                 >
-                  {/* HEADER */}
-                  <h2 className="text-white text-xl mb-4">Connect with me</h2>
+                  <h2 className="text-white text-xl mb-4">
+                    Connect with me
+                  </h2>
 
-                  {/* ICONS */}
                   <div className="flex flex-col gap-6">
                     {socials.map((s, i) => (
                       <motion.a
@@ -83,7 +83,9 @@ export default function SocialsFab({ show }) {
                         className="flex items-center gap-4 text-white"
                       >
                         <SocialIcon social={s} size={18} />
-                        <span className="text-xs text-white/80">{s.description}</span>
+                        <span className="text-xs text-white/80">
+                          {s.description}
+                        </span>
                       </motion.a>
                     ))}
                   </div>
