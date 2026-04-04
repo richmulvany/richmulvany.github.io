@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useTransform, useMotionValue } from 'framer-motion';
-import ProjectCard from './ProjectCard';
+import ProjectCardContainer from './ProjectCardContainer';
 import { projects } from '../../data/projects';
 import useScrollSource from '../../hooks/useScrollSource';
 import useInView from '../../hooks/useInView';
@@ -71,7 +71,7 @@ export default function ProjectStack() {
                       zIndex: index + 1,
                     }}
                   >
-                    <ProjectCard
+                    <ProjectCardContainer
                       project={project}
                       bgColor={colors.bg}
                       pillColor={colors.pill}

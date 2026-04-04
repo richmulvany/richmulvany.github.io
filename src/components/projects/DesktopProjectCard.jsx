@@ -1,6 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import useProjectCardState from '../../hooks/useProjectCardState';
 import Color from 'color';
 import { PROJECT_ACTIONS } from '../../config/projectActions';
 
@@ -8,8 +7,14 @@ import { PROJECT_ACTIONS } from '../../config/projectActions';
  * Desktop project card.
  * Expands on hover or click.
  */
-export default function DesktopProjectCard({ project, bgColor, pillColor }) {
-  const { expanded, setHovered, setLocked } = useProjectCardState();
+export default function DesktopProjectCard({
+  project,
+  bgColor,
+  pillColor,
+  state,
+}) {
+  const { expanded, setHovered, setLocked } = state;
+
   const [titleHeight, setTitleHeight] = useState(0);
   const titleRef = useRef(null);
 
@@ -56,9 +61,9 @@ export default function DesktopProjectCard({ project, bgColor, pillColor }) {
           top: expanded ? 'auto' : '55%',
         }}
       >
-        {project.tech.map((t, i) => (
+        {project.tech.map((t) => (
           <h1
-            key={i}
+            key={t}
             className="px-5 py-3 rounded-full"
             style={{
               backgroundColor: pillColor,

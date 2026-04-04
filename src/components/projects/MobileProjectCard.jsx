@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import useProjectCardState from '../../hooks/useProjectCardState';
 import Color from 'color';
 import { PROJECT_ACTIONS } from '../../config/projectActions';
 import { LAYOUT_SPRING, FADE_FAST } from '../../config/animations';
@@ -8,8 +7,13 @@ import { LAYOUT_SPRING, FADE_FAST } from '../../config/animations';
  * Mobile project card.
  * Expands on tap.
  */
-export default function MobileProjectCard({ project, bgColor, pillColor }) {
-  const { expanded, setLocked } = useProjectCardState();
+export default function MobileProjectCard({
+  project,
+  bgColor,
+  pillColor,
+  state,
+}) {
+  const { expanded, setLocked } = state;
 
   const Action = PROJECT_ACTIONS[project.type];
 
@@ -26,7 +30,6 @@ export default function MobileProjectCard({ project, bgColor, pillColor }) {
       animate={{ y: expanded ? -16 : 0 }}
     >
       <div className="h-[30rem] px-6 py-6 flex flex-col justify-between">
-        {/* Top section */}
         <motion.div
           className={`flex flex-col items-center text-center ${
             expanded ? 'mt-2' : 'justify-center flex-1'
@@ -44,9 +47,9 @@ export default function MobileProjectCard({ project, bgColor, pillColor }) {
               layout
               transition={LAYOUT_SPRING}
             >
-              {project.tech.map((t, i) => (
+              {project.tech.map((t) => (
                 <h1
-                  key={i}
+                  key={t}
                   className="text-md px-5 py-2 rounded-full font-medium"
                   style={{
                     backgroundColor: pillColor,
@@ -60,7 +63,6 @@ export default function MobileProjectCard({ project, bgColor, pillColor }) {
           )}
         </motion.div>
 
-        {/* Description */}
         {expanded && (
           <motion.p
             className="text-gray-700 text-sm leading-relaxed text-justify flex-1 flex items-center"
@@ -73,7 +75,6 @@ export default function MobileProjectCard({ project, bgColor, pillColor }) {
           </motion.p>
         )}
 
-        {/* Link */}
         {expanded && (
           <motion.a
             href={project.link}
