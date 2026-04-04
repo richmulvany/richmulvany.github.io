@@ -1,5 +1,5 @@
 import ProfileHeader from "./ProfileHeader";
-import QualificationsList from "./QualificationList";
+import QualificationsList from "../qualifications/QualificationList";
 
 export default function MobileHeader() {
 
