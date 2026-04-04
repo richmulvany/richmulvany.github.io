@@ -13,7 +13,7 @@ export default function QualificationPill({ QualType, qualification, iconColor }
 
   return (
     <div className="mt-4">
-      <div className="flex items-center space-x-4 text-gray-600">
+      <div className="flex items-center space-x-6 md:space-x-4 text-gray-600">
         
         {/* Icon */}
         <Icon
@@ -23,7 +23,7 @@ export default function QualificationPill({ QualType, qualification, iconColor }
         />
 
         {/* Pill */}
-        <div className="flex flex-col justify-center bg-taupe-300/40 md:bg-taupe-200 rounded-full px-6 py-2 w-full mr-13 min-h-[56px]">
+        <div className="flex flex-col justify-center bg-taupe-300/40 md:bg-taupe-200 rounded-full px-6 py-2 w-full mr-4 md:mr-12 min-h-[56px] truncate">
           
           <h1 className="truncate leading-tight">
             {qualification.title}
