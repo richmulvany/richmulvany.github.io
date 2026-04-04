@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import { motion, useTransform, useMotionValue } from 'framer-motion';
 import ProjectCard from './ProjectCard';
 import { projects } from '../../data/projects';
@@ -9,7 +9,6 @@ import SocialsFab from '../socials/SocialsFab';
 
 export default function ProjectStack() {
   const scrollY = useMotionValue(0);
-  const [scrollTop, setScrollTop] = useState(0);
 
   // section tracking
   const sectionRef = useRef(null);
@@ -19,7 +18,6 @@ export default function ProjectStack() {
   // unified scroll handling
   useScrollSource((value) => {
     scrollY.set(value * 0.3);
-    setScrollTop(value * 0.3);
   });
 
   const opacity = useTransform(scrollY, [0, 120], [1, 0]);
@@ -51,7 +49,7 @@ export default function ProjectStack() {
   return (
     <>
       {/* Floating socials (mobile only) */}
-      <SocialsFab show={!isDesktop && inView} scrollY={scrollY} />
+      <SocialsFab show={!isDesktop && inView} />
 
       <div
         ref={sectionRef} // Triggers the button

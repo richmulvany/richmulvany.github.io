@@ -1,5 +1,3 @@
-import React from 'react';
-
 const svgIcons = {
   GitHub: {
     viewBox: '0 0 496 512',

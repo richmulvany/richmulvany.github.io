@@ -1,21 +1,11 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useVelocity } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Send, X } from 'lucide-react';
 import { socials } from '../../data/socials';
 import SocialIcon from './SocialIcon';
 
-export default function SocialsFab({ show, scrollY }) {
+export default function SocialsFab({ show }) {
   const [open, setOpen] = useState(false);
-
-  const velocity = useVelocity(scrollY);
-  const [isFastScrolling, setIsFastScrolling] = useState(false);
-
-  useEffect(() => {
-    const unsubscribe = velocity.on('change', (v) => {
-      setIsFastScrolling(Math.abs(v) > 300);
-    });
-    return unsubscribe;
-  }, [velocity]);
 
   return (
     <AnimatePresence mode="wait">
