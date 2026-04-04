@@ -1,5 +1,5 @@
-import ProfileHeader from "./ProfileHeader";
-import QualificationList from "../qualifications/QualificationList";
+import ProfileHeader from './ProfileHeader';
+import QualificationList from '../qualifications/QualificationList';
 
 export default function Sidebar() {
   return (

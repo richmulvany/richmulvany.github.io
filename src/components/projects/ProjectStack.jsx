@@ -1,11 +1,11 @@
-import { useState, useRef } from "react";
-import { motion, useTransform, useMotionValue } from "framer-motion";
-import ProjectCard from "./ProjectCard";
-import { projects } from "../../data/projects";
-import useScrollSource from "../../hooks/useScrollSource";
-import useInView from "../../hooks/useInView";
-import useMediaQuery from "../../hooks/useMediaQuery";
-import SocialsFab from "../socials/SocialsFab";
+import { useState, useRef } from 'react';
+import { motion, useTransform, useMotionValue } from 'framer-motion';
+import ProjectCard from './ProjectCard';
+import { projects } from '../../data/projects';
+import useScrollSource from '../../hooks/useScrollSource';
+import useInView from '../../hooks/useInView';
+import useMediaQuery from '../../hooks/useMediaQuery';
+import SocialsFab from '../socials/SocialsFab';
 
 export default function ProjectStack() {
   const scrollY = useMotionValue(0);
@@ -14,7 +14,7 @@ export default function ProjectStack() {
   // section tracking
   const sectionRef = useRef(null);
   const inView = useInView(sectionRef, 0.2);
-  const isDesktop = useMediaQuery("(min-width: 768px)");
+  const isDesktop = useMediaQuery('(min-width: 768px)');
 
   // unified scroll handling
   useScrollSource((value) => {
@@ -27,31 +27,31 @@ export default function ProjectStack() {
 
   const colorPalette = [
     {
-      bg: "rgba(245, 245, 244)",
-      border: "rgba(249, 250, 251)",
-      pill: "rgba(231, 229, 228, 0.6)",
+      bg: 'rgba(245, 245, 244)',
+      border: 'rgba(249, 250, 251)',
+      pill: 'rgba(231, 229, 228, 0.6)',
     },
     {
-      bg: "hsl(32, 70%, 94%)",
-      border: "hsl(32, 75%, 86%)",
-      pill: "hsl(32, 80%, 91%)",
+      bg: 'hsl(32, 70%, 94%)',
+      border: 'hsl(32, 75%, 86%)',
+      pill: 'hsl(32, 80%, 91%)',
     },
     {
-      bg: "hsl(32, 80%, 88%)",
-      border: "hsl(32, 85%, 78%)",
-      pill: "hsl(32, 90%, 85%)",
+      bg: 'hsl(32, 80%, 88%)',
+      border: 'hsl(32, 85%, 78%)',
+      pill: 'hsl(32, 90%, 85%)',
     },
     {
-      bg: "hsl(32, 90%, 82%)",
-      border: "hsl(32, 95%, 70%)",
-      pill: "hsl(32, 100%, 79%)",
+      bg: 'hsl(32, 90%, 82%)',
+      border: 'hsl(32, 95%, 70%)',
+      pill: 'hsl(32, 100%, 79%)',
     },
   ];
 
   return (
     <>
       {/* Floating socials (mobile only) */}
-      <SocialsFab show={!isDesktop && inView} scrollY={scrollY}/>
+      <SocialsFab show={!isDesktop && inView} scrollY={scrollY} />
 
       <div
         ref={sectionRef} // Triggers the button
@@ -86,8 +86,7 @@ export default function ProjectStack() {
 
             <div className="relative">
               {projects.toReversed().map((project, index) => {
-                const colors =
-                  colorPalette[index % colorPalette.length];
+                const colors = colorPalette[index % colorPalette.length];
 
                 return (
                   <motion.div
@@ -98,11 +97,7 @@ export default function ProjectStack() {
                       zIndex: index + 1,
                     }}
                   >
-                    <ProjectCard
-                      project={project}
-                      bgColor={colors.bg}
-                      pillColor={colors.pill}
-                    />
+                    <ProjectCard project={project} bgColor={colors.bg} pillColor={colors.pill} />
                   </motion.div>
                 );
               })}

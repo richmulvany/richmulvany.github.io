@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence, useVelocity } from "framer-motion";
-import { Send, X } from "lucide-react";
-import { socials } from "../../data/socials";
-import SocialIcon from "./SocialIcon";
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence, useVelocity } from 'framer-motion';
+import { Send, X } from 'lucide-react';
+import { socials } from '../../data/socials';
+import SocialIcon from './SocialIcon';
 
 export default function SocialsFab({ show, scrollY }) {
   const [open, setOpen] = useState(false);
@@ -11,7 +11,7 @@ export default function SocialsFab({ show, scrollY }) {
   const [isFastScrolling, setIsFastScrolling] = useState(false);
 
   useEffect(() => {
-    const unsubscribe = velocity.on("change", (v) => {
+    const unsubscribe = velocity.on('change', (v) => {
       setIsFastScrolling(Math.abs(v) > 300);
     });
     return unsubscribe;
@@ -40,13 +40,13 @@ export default function SocialsFab({ show, scrollY }) {
               height: open ? 240 : 44,
               borderRadius: open ? 20 : 999,
               borderWidth: open ? 2 : 0,
-              borderColor: "rgba(248, 133, 85, 0.5)",
+              borderColor: 'rgba(248, 133, 85, 0.5)',
             }}
             transition={{
-              type: "spring",
+              type: 'spring',
               stiffness: 320,
               damping: 28,
-              default: { duration: 0.25, ease: "easeInOut" },
+              default: { duration: 0.25, ease: 'easeInOut' },
             }}
             className="bg-orange-600/50 border-orange-500 border-opacity-20 backdrop-blur-md shadow-lg overflow-hidden relative"
           >
@@ -56,10 +56,7 @@ export default function SocialsFab({ show, scrollY }) {
                 onClick={() => setOpen(true)}
                 className="w-full h-full flex items-center justify-center text-white"
               >
-                <Send
-                  size={21}
-                  style={{ transform: "translateX(-2px) translateY(1px)" }}
-                />
+                <Send size={21} style={{ transform: 'translateX(-2px) translateY(1px)' }} />
               </button>
             )}
 
@@ -96,9 +93,7 @@ export default function SocialsFab({ show, scrollY }) {
                         className="flex items-center gap-4 text-white"
                       >
                         <SocialIcon social={s} size={18} />
-                        <span className="text-xs text-white/80">
-                          {s.description}
-                        </span>
+                        <span className="text-xs text-white/80">{s.description}</span>
                       </motion.a>
                     ))}
                   </div>

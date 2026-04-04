@@ -1,7 +1,7 @@
-import { jobs } from "../../data/jobs";
-import { degrees } from "../../data/degrees";
-import { certificates } from "../../data/certificates";
-import QualificationPill from "./QualificationPill";
+import { jobs } from '../../data/jobs';
+import { degrees } from '../../data/degrees';
+import { certificates } from '../../data/certificates';
+import QualificationPill from './QualificationPill';
 
 export default function QualificationsList() {
   return (

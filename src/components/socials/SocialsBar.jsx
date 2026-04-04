@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { socials } from "../../data/socials";
-import useMediaQuery from "../../hooks/useMediaQuery";
-import SocialIcon from "./SocialIcon";
+import { useState } from 'react';
+import { socials } from '../../data/socials';
+import useMediaQuery from '../../hooks/useMediaQuery';
+import SocialIcon from './SocialIcon';
 
 export default function SocialsBar({ iconColor, hoverColor, iconSize }) {
-  const [hoveredText, setHoveredText] = useState("");
-  const isDesktop = useMediaQuery("(min-width: 768px)");
+  const [hoveredText, setHoveredText] = useState('');
+  const isDesktop = useMediaQuery('(min-width: 768px)');
 
   return (
     <div className="relative items-center mt-4">
@@ -14,21 +14,17 @@ export default function SocialsBar({ iconColor, hoverColor, iconSize }) {
         {socials.map((s, i) => (
           <a
             key={i}
-            href={s.url || "#"}
+            href={s.url || '#'}
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={() => setHoveredText(s.description)}
-            onMouseLeave={() => setHoveredText("")}
+            onMouseLeave={() => setHoveredText('')}
             className="transition-colors"
           >
             <div
               style={{ color: iconColor }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = hoverColor)
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = iconColor)
-              }
+              onMouseEnter={(e) => (e.currentTarget.style.color = hoverColor)}
+              onMouseLeave={(e) => (e.currentTarget.style.color = iconColor)}
             >
               <SocialIcon social={s} size={parseInt(iconSize)} />
             </div>

@@ -1,8 +1,8 @@
-import { useRef, useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import useProjectCardState from "../../hooks/useProjectCardState";
-import Color from "color";
-import lineclamp from "@tailwindcss/line-clamp";
+import { useRef, useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import useProjectCardState from '../../hooks/useProjectCardState';
+import Color from 'color';
+import lineclamp from '@tailwindcss/line-clamp';
 
 export default function DesktopProjectCard({ project, bgColor, pillColor }) {
   const { expanded, setHovered, setLocked } = useProjectCardState();
@@ -16,8 +16,8 @@ export default function DesktopProjectCard({ project, bgColor, pillColor }) {
   }, [project.title, expanded]); // re-measure if title or expanded changes
 
   const actionMap = {
-    blog: "Read Blog →",
-    proj: "View Project →",
+    blog: 'Read Blog →',
+    proj: 'View Project →',
   };
 
   const Action = actionMap[project.type];
@@ -33,10 +33,10 @@ export default function DesktopProjectCard({ project, bgColor, pillColor }) {
       <motion.h2
         ref={titleRef}
         className="tracking-tight leading-tight absolute left-0 right-0 px-10 text-3xl"
-        initial={{ top: "50%", transform: "translateY(-50%)" }}
+        initial={{ top: '50%', transform: 'translateY(-50%)' }}
         animate={{
-          top: expanded ? "2rem" : "45%",
-          transform: expanded ? "translateY(0)" : "translateY(-50%)",
+          top: expanded ? '2rem' : '45%',
+          transform: expanded ? 'translateY(0)' : 'translateY(-50%)',
         }}
       >
         {project.title}
@@ -44,7 +44,7 @@ export default function DesktopProjectCard({ project, bgColor, pillColor }) {
 
       <motion.p
         className="absolute left-10 right-10 text-md text-gray-600 text-justify md:line-clamp-5 lg:line-clamp-10"
-        style={{ top: expanded ? titleHeight + 40 : "auto" }} // 16px extra spacing
+        style={{ top: expanded ? titleHeight + 40 : 'auto' }} // 16px extra spacing
         animate={{ opacity: expanded ? 1 : 0 }}
       >
         {project.description}
@@ -53,8 +53,8 @@ export default function DesktopProjectCard({ project, bgColor, pillColor }) {
       <motion.div
         className="flex flex-wrap gap-2 absolute left-0 right-0 px-8 justify-start"
         animate={{
-          bottom: expanded ? "4.5rem" : "auto",
-          top: expanded ? "auto" : "55%",
+          bottom: expanded ? '4.5rem' : 'auto',
+          top: expanded ? 'auto' : '55%',
         }}
       >
         {project.tech.map((t, i) => (
