@@ -11,10 +11,10 @@ export default function MobileLayout({ children }) {
               linear-gradient(
                 to bottom,
                 rgba(245, 245, 244,1.0) 0%,
-                rgba(245, 245, 244,0.1) 50%,
+                rgba(245, 245, 244,0.1) 40%,
                 rgba(245, 245, 244,0.0) 70%,
-                rgba(245, 245, 244,0.1) 90%,
-                rgba(245, 245, 244,1.0) 100%
+                rgba(245, 245, 244,0.0) 90%,
+                rgba(245, 245, 244,0.0) 100%
               )
             `,
             backdropFilter: "blur(10px)",

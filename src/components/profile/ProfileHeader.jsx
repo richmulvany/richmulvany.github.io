@@ -1,4 +1,4 @@
-import SocialsBar from "./SocialsBar";
+import SocialsBar from "../socials/SocialsBar";
 import ProfilePic from "../../assets/profile_pic.png";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
