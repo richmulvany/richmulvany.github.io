@@ -3,13 +3,15 @@ import ProfilePic from '../../assets/profile_pic.png';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import useMediaQuery from '../../hooks/useMediaQuery';
+import { BREAKPOINTS } from '../../config/breakpoints';
+import { FADE_FAST } from '../../config/animations';
 
 /**
  * Profile header component.
  * Handles scroll-based animation for desktop view.
  */
 export default function ProfileHeader({ compact = false }) {
-  const isDesktop = useMediaQuery('(min-width: 768px)');
+  const isDesktop = useMediaQuery(BREAKPOINTS.desktop);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -60,7 +62,7 @@ export default function ProfileHeader({ compact = false }) {
                 opacity: shouldAnimate ? 0 : 1,
                 y: shouldAnimate ? -6 : 0,
               }}
-              transition={{ duration: 0.25 }}
+              transition={FADE_FAST}
             >
               <p className="text-[#f98555] text-sm">
                 Grayce Group for NEO NEXT+
@@ -81,7 +83,7 @@ export default function ProfileHeader({ compact = false }) {
                   opacity: shouldAnimate ? 1 : 0,
                   y: shouldAnimate ? 0 : 6,
                 }}
-                transition={{ duration: 0.25 }}
+                transition={FADE_FAST}
               >
                 <div className="w-fit px-7 mt-2 mx-auto bg-taupe-200 rounded-full py-[1px] pb-4">
                   <SocialsBar

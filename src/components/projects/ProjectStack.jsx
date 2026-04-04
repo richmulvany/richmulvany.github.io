@@ -6,6 +6,8 @@ import useScrollSource from '../../hooks/useScrollSource';
 import useInView from '../../hooks/useInView';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import SocialsFab from '../socials/SocialsFab';
+import { PROJECT_COLORS } from '../../config/projectColors';
+import { BREAKPOINTS } from '../../config/breakpoints';
 
 /**
  * Project stack section.
@@ -16,7 +18,7 @@ export default function ProjectStack() {
 
   const sectionRef = useRef(null);
   const inView = useInView(sectionRef, 0.2);
-  const isDesktop = useMediaQuery('(min-width: 768px)');
+  const isDesktop = useMediaQuery(BREAKPOINTS.desktop);
 
   useScrollSource((value) => {
     scrollY.set(value * 0.3);
@@ -24,13 +26,6 @@ export default function ProjectStack() {
 
   const opacity = useTransform(scrollY, [0, 120], [1, 0]);
   const y = useTransform(scrollY, [0, 120], [0, -20]);
-
-  const colorPalette = [
-    { bg: 'rgba(245, 245, 244)', pill: 'rgba(231, 229, 228, 0.6)' },
-    { bg: 'hsl(32, 70%, 94%)', pill: 'hsl(32, 80%, 91%)' },
-    { bg: 'hsl(32, 80%, 88%)', pill: 'hsl(32, 90%, 85%)' },
-    { bg: 'hsl(32, 90%, 82%)', pill: 'hsl(32, 100%, 79%)' },
-  ];
 
   return (
     <>
@@ -65,7 +60,7 @@ export default function ProjectStack() {
 
             <div className="relative">
               {projects.toReversed().map((project, index) => {
-                const colors = colorPalette[index % colorPalette.length];
+                const colors = PROJECT_COLORS[index % PROJECT_COLORS.length];
 
                 return (
                   <motion.div

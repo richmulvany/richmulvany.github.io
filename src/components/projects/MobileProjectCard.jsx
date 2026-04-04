@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import useProjectCardState from '../../hooks/useProjectCardState';
 import Color from 'color';
+import { PROJECT_ACTIONS } from '../../config/projectActions';
+import { LAYOUT_SPRING, FADE_FAST } from '../../config/animations';
 
 /**
  * Mobile project card.
@@ -9,12 +11,7 @@ import Color from 'color';
 export default function MobileProjectCard({ project, bgColor, pillColor }) {
   const { expanded, setLocked } = useProjectCardState();
 
-  const actionMap = {
-    blog: 'Read Blog →',
-    proj: 'View Project →',
-  };
-
-  const Action = actionMap[project.type];
+  const Action = PROJECT_ACTIONS[project.type];
 
   return (
     <motion.div
@@ -25,7 +22,7 @@ export default function MobileProjectCard({ project, bgColor, pillColor }) {
       className="relative rounded-3xl ml-4 mr-4 shadow-lg cursor-pointer overflow-hidden"
       style={{ backgroundColor: bgColor }}
       layout
-      transition={{ layout: { duration: 0.3, ease: 'easeInOut' } }}
+      transition={LAYOUT_SPRING}
       animate={{ y: expanded ? -16 : 0 }}
     >
       <div className="h-[30rem] px-6 py-6 flex flex-col justify-between">
@@ -35,7 +32,7 @@ export default function MobileProjectCard({ project, bgColor, pillColor }) {
             expanded ? 'mt-2' : 'justify-center flex-1'
           }`}
           layout
-          transition={{ layout: { duration: 0.3, ease: 'easeInOut' } }}
+          transition={LAYOUT_SPRING}
         >
           <motion.h2 className="tracking-tight leading-tight text-3xl" layout>
             {project.title}
@@ -45,7 +42,7 @@ export default function MobileProjectCard({ project, bgColor, pillColor }) {
             <motion.div
               className="flex flex-wrap justify-center px-8 mt-6 gap-3"
               layout
-              transition={{ layout: { duration: 0.3, ease: 'easeInOut' } }}
+              transition={LAYOUT_SPRING}
             >
               {project.tech.map((t, i) => (
                 <h1
@@ -70,7 +67,7 @@ export default function MobileProjectCard({ project, bgColor, pillColor }) {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
-            transition={{ duration: 0.25 }}
+            transition={FADE_FAST}
           >
             {project.description}
           </motion.p>
@@ -86,7 +83,7 @@ export default function MobileProjectCard({ project, bgColor, pillColor }) {
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 6 }}
-            transition={{ duration: 0.25 }}
+            transition={FADE_FAST}
           >
             <h2>{Action}</h2>
           </motion.a>

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Send, X } from 'lucide-react';
 import { socials } from '../../data/socials';
 import SocialIcon from './SocialIcon';
+import { FADE_FAST, SPRING_EXPAND } from '../../config/animations';
 
 /**
  * Floating action button for mobile socials.
@@ -21,7 +22,7 @@ export default function SocialsFab({ show }) {
           scale: show ? 1 : 0.9,
         }}
         exit={{ opacity: 0, x: -20, scale: 0.9 }}
-        transition={{ duration: 0.25 }}
+        transition={FADE_FAST}
         className="fixed top-4 left-3 z-50"
       >
         <motion.div whileTap={{ scale: 0.94 }}>
@@ -34,12 +35,7 @@ export default function SocialsFab({ show }) {
               borderWidth: open ? 2 : 0,
               borderColor: 'rgba(248, 133, 85, 0.5)',
             }}
-            transition={{
-              type: 'spring',
-              stiffness: 320,
-              damping: 28,
-              default: { duration: 0.25, ease: 'easeInOut' },
-            }}
+            transition={SPRING_EXPAND}
             className="bg-orange-600/50 backdrop-blur-md shadow-lg overflow-hidden relative"
           >
             {!open && (

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { socials } from '../../data/socials';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import SocialIcon from './SocialIcon';
+import { BREAKPOINTS } from '../../config/breakpoints';
 
 /**
  * Social icons bar.
@@ -9,7 +10,7 @@ import SocialIcon from './SocialIcon';
  */
 export default function SocialsBar({ iconColor, hoverColor, iconSize }) {
   const [hoveredText, setHoveredText] = useState('');
-  const isDesktop = useMediaQuery('(min-width: 768px)');
+  const isDesktop = useMediaQuery(BREAKPOINTS.desktop);
 
   return (
     <div className="relative items-center mt-4">

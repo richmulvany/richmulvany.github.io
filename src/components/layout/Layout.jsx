@@ -1,12 +1,13 @@
 import useMediaQuery from '../../hooks/useMediaQuery';
 import MobileLayout from './MobileLayout';
+import { BREAKPOINTS } from '../../config/breakpoints';
 
 /**
  * Root responsive layout switcher.
  * Chooses between mobile and desktop layouts.
  */
 export default function Layout({ sidebar, children }) {
-  const isDesktop = useMediaQuery('(min-width: 768px)');
+  const isDesktop = useMediaQuery(BREAKPOINTS.desktop);
 
   if (!isDesktop) {
     return <MobileLayout>{children}</MobileLayout>;

@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import useProjectCardState from '../../hooks/useProjectCardState';
 import Color from 'color';
+import { PROJECT_ACTIONS } from '../../config/projectActions';
 
 /**
  * Desktop project card.
@@ -18,12 +19,7 @@ export default function DesktopProjectCard({ project, bgColor, pillColor }) {
     }
   }, [project.title, expanded]);
 
-  const actionMap = {
-    blog: 'Read Blog →',
-    proj: 'View Project →',
-  };
-
-  const Action = actionMap[project.type];
+  const Action = PROJECT_ACTIONS[project.type];
 
   return (
     <motion.div
