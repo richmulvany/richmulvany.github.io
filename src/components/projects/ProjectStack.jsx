@@ -11,7 +11,7 @@ export default function ProjectStack() {
   const scrollY = useMotionValue(0);
   const [scrollTop, setScrollTop] = useState(0);
 
-  // 👇 NEW: section tracking
+  // section tracking
   const sectionRef = useRef(null);
   const inView = useInView(sectionRef, 0.2);
   const isDesktop = useMediaQuery("(min-width: 768px)");
@@ -50,16 +50,16 @@ export default function ProjectStack() {
 
   return (
     <>
-      {/* 👇 NEW: Floating socials (mobile only) */}
+      {/* Floating socials (mobile only) */}
       <SocialsFab show={!isDesktop && inView} scrollY={scrollY}/>
 
       <div
-        ref={sectionRef} // 👈 THIS is what triggers the button
+        ref={sectionRef} // Triggers the button
         className="relative w-full md:max-w-4xl mx-auto"
       >
         {/* Background */}
         <div
-          className="absolute inset-0 rounded-3xl"
+          className="absolute inset-0 mb-4 rounded-3xl"
           style={{
             background: `
               linear-gradient(
@@ -71,7 +71,6 @@ export default function ProjectStack() {
                 rgba(245, 245, 244,1.0) 100%
               )
             `,
-            backdropFilter: "blur(10px)",
           }}
         />
 

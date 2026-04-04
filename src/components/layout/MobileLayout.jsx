@@ -16,8 +16,7 @@ export default function MobileLayout({ children }) {
                 rgba(245, 245, 244,0.0) 90%,
                 rgba(245, 245, 244,0.0) 100%
               )
-            `,
-            backdropFilter: "blur(10px)",
+            `
           }}
         />
         <main className="px-10 py-11 space-y-8 mb-4">

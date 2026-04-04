@@ -10,9 +10,10 @@ export default function MobileHeader() {
         {/* Hero */}
         <ProfileHeader compact />
 
-        {/* Toggle */}
-        <QualificationsList />
-
+        {/* Qualifications */}
+        <div className="ml-4">
+          <QualificationsList />
+        </div>
 
     </div>
   );
