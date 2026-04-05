@@ -47,13 +47,11 @@ export default function ProfileHeader({ compact = false }) {
             <h1 className="text-3xl ml-6 mb-2 mt-1">Richard Mulvany</h1>
           )}
 
-          {/* Shared animation container */}
           <div
             className={`relative min-h-[80px] flex items-start ${
               compact ? 'mt-0' : 'mt-4'
             }`}
           >
-            {/* Description */}
             <motion.div
               className={`absolute w-full ${
                 compact ? 'left-6' : 'left-0 top-2'
@@ -75,7 +73,6 @@ export default function ProfileHeader({ compact = false }) {
               </p>
             </motion.div>
 
-            {/* Desktop socials pill */}
             {isDesktop && (
               <motion.div
                 className="absolute left-0 w-full"
@@ -98,7 +95,6 @@ export default function ProfileHeader({ compact = false }) {
         </div>
       </div>
 
-      {/* Mobile socials */}
       {!isDesktop && (
         <div className="w-fit px-4 py-[1px] mx-auto bg-taupe-300/36 rounded-full mt-4 z-20 pb-4">
           <SocialsBar

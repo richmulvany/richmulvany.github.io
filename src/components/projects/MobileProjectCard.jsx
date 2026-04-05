@@ -8,14 +8,8 @@ import useProjectCardVariants from '../../hooks/animations/useProjectCardVariant
  * Mobile project card.
  * Expands on tap.
  */
-export default function MobileProjectCard({
-  project,
-  bgColor,
-  pillColor,
-  state,
-}) {
+export default function MobileProjectCard({ project, bgColor, pillColor, state }) {
   const { expanded, setLocked } = state;
-
   const v = useProjectCardVariants(0);
   const mode = expanded ? 'expanded' : 'collapsed';
   const Action = PROJECT_ACTIONS[project.type];
