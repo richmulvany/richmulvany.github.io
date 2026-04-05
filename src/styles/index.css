@@ -46,9 +46,9 @@
   scroll-behavior: smooth;
 }
 
-html,
-body {
-  min-height: 100%;
+html, body {
+  height: 100%;
+  overflow: hidden;
 }
 
 .scroll-container::-webkit-scrollbar {
