@@ -1,16 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { jobs } from '../../data/jobs';
 import { degrees } from '../../data/degrees';
 import { certificates } from '../../data/certificates';
 import QualificationPill from './QualificationPill';
-import useVisibleItems from '../../hooks/useVisibleItems';
 
 /**
- * Renders all qualifications grouped by type.
- * Collapses extra items into "+X more" if they overflow the sidebar.
- * Updates dynamically on window resize.
- * Smoothly scrolls when expanded.
- * Show less button pinned inside bottom margin.
+ * QualificationList
+ *
+ * Displays a unified list of qualifications (jobs, degrees, and certificates)
+ * as a series of QualificationPill components.
+ *
+ * The component detects vertical overflow within its container and, when content
+ * exceeds the available space, initially truncates the list and displays a
+ * "Show more" control with a gradient fade. Expanding the list enables scrolling
+ * and smoothly scrolls to the bottom to reveal additional items.
+ *
+ * ResizeObserver and window resize events are used to dynamically recalculate
+ * overflow, ensuring responsive behaviour across different screen sizes.
  */
 export default function QualificationList() {
   const allQualifications = [
@@ -20,53 +26,68 @@ export default function QualificationList() {
   ];
 
   const [expanded, setExpanded] = useState(false);
+  const [hasOverflow, setHasOverflow] = useState(false);
 
-  const { containerRef, sidebarRef, visibleCount } = useVisibleItems(allQualifications, expanded);
+  const containerRef = useRef(null);
 
-  const visibleItems = expanded
-    ? allQualifications
-    : allQualifications.slice(0, visibleCount);
+  const checkOverflow = () => {
+    const el = containerRef.current;
+    if (!el) return;
 
-  const hiddenCount = allQualifications.length - visibleItems.length;
+    const isOverflowing = el.scrollHeight > el.clientHeight;
+    setHasOverflow(isOverflowing);
+  };
 
-  // Scroll to bottom smoothly when expanding
+  useEffect(() => {
+    checkOverflow();
+
+    const observer = new ResizeObserver(checkOverflow);
+    if (containerRef.current) observer.observe(containerRef.current);
+
+    window.addEventListener('resize', checkOverflow);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', checkOverflow);
+    };
+  }, []);
+
   useEffect(() => {
     if (expanded && containerRef.current) {
-      containerRef.current.scrollTo({
-        top: containerRef.current.scrollHeight,
-        behavior: 'smooth',
+      requestAnimationFrame(() => {
+        containerRef.current.scrollTo({
+          top: containerRef.current.scrollHeight,
+          behavior: 'smooth',
+        });
       });
     }
   }, [expanded]);
 
   return (
-    <div
-      ref={sidebarRef}
-      className="h-full flex flex-col overflow-hidden relative"
-    >
-      <div ref={containerRef} className={`flex flex-col overflow-auto ${expanded ? 'pb-10' : ''}`}>
-        {visibleItems.map((q) => (
+    <div className="flex flex-col h-full relative">
+      {/* Content */}
+      <div
+        ref={containerRef}
+        className={`
+          flex flex-col
+          ${expanded ? 'overflow-y-auto pb-12' : 'overflow-hidden'}
+        `}
+      >
+        {allQualifications.map((q) => (
           <QualificationPill key={q.title} QualType={q.type} qualification={q} />
         ))}
       </div>
 
-      {(hiddenCount > 0 || expanded) && (
-        <div className="absolute bottom-0 left-0 w-full bg-stone-100 px-0 py-2 flex-shrink-0">
-          {expanded ? (
-            <button
-              onClick={() => setExpanded(false)}
-              className="text-sm text-gray-500 hover:text-gray-700 text-left w-full"
-            >
-              Show less
-            </button>
-          ) : (
-            <button
-              onClick={() => setExpanded(true)}
-              className="text-sm text-gray-500 hover:text-gray-700 text-left w-full"
-            >
-              +{hiddenCount} more
-            </button>
-          )}
+      {/* Show more only if needed AND not expanded */}
+      {!expanded && hasOverflow && (
+        <div className="absolute bottom-0 left-0 w-full">
+          <div className="h-12 bg-gradient-to-t from-stone-100 to-transparent pointer-events-none" />
+          <button
+            onClick={() => setExpanded(true)}
+            className="w-full text-sm text-gray-500 hover:text-orange-500 text-left bg-stone-100 py-2"
+          >
+            Show more ↓
+          </button>
         </div>
       )}
     </div>

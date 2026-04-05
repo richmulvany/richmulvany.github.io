@@ -30,7 +30,7 @@ export default function ProfileHeader({ compact = false }) {
   return (
     <div className="flex flex-col items-center text-left md:text-center">
       <div className={compact ? 'flex flex-inline' : 'text-center'}>
-        {isDesktop && <h1 className="text-4xl mb-5">Richard Mulvany</h1>}
+        {isDesktop && <h1 className="text-4xl mb-5  mt-4">Richard Mulvany</h1>}
 
         <img
           src={ProfilePic}
