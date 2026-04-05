@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Color from 'color';
 import { PROJECT_ACTIONS } from '../../config/projectActions';
 import { LAYOUT_SPRING, FADE_FAST } from '../../config/animations';
+import useProjectCardVariants from '../../hooks/animations/useProjectCardVariants';
 
 /**
  * Mobile project card.
@@ -15,6 +16,8 @@ export default function MobileProjectCard({
 }) {
   const { expanded, setLocked } = state;
 
+  const v = useProjectCardVariants(0);
+  const mode = expanded ? 'expanded' : 'collapsed';
   const Action = PROJECT_ACTIONS[project.type];
 
   return (
@@ -27,7 +30,9 @@ export default function MobileProjectCard({
       style={{ backgroundColor: bgColor }}
       layout
       transition={LAYOUT_SPRING}
-      animate={{ y: expanded ? -16 : 0 }}
+      variants={v.mobileCard}
+      animate={mode}
+      initial="collapsed"
     >
       <div className="h-[30rem] px-6 py-6 flex flex-col justify-between">
         <motion.div
@@ -65,11 +70,10 @@ export default function MobileProjectCard({
 
         {expanded && (
           <motion.p
-            className="text-gray-700 text-sm leading-relaxed text-justify flex-1 flex items-center"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
             transition={FADE_FAST}
+            className="text-gray-700 text-sm leading-relaxed text-justify flex-1 flex items-center"
           >
             {project.description}
           </motion.p>
@@ -80,11 +84,10 @@ export default function MobileProjectCard({
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="tracking-tight leading-tight mt-4 text-left text-orange-600 font-medium"
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 6 }}
             transition={FADE_FAST}
+            className="tracking-tight leading-tight mt-4 text-left text-orange-600 font-medium"
           >
             <h2>{Action}</h2>
           </motion.a>
