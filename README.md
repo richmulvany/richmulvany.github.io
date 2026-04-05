@@ -64,10 +64,12 @@ src/
     projects/
     socials/
     qualifications/
-  hooks/
+  config/
   data/
+  hooks/
+    animations/
   styles/
-  utils/
+  tests/
 ```
 
 ---
@@ -111,7 +113,7 @@ npm run build
 ## Future Improvements
 
 - Introduce TypeScript for stronger type safety -- and to learn a little about it
-- Add automated testing (Vitest / React Testing Library)
+- ~~Add automated testing ~~
 - ~~Further refine animation system for consistency~~
 - Explore performance optimisation and bundle analysis
 - Dark mode
