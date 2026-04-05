@@ -112,7 +112,7 @@ npm run build
 
 - Introduce TypeScript for stronger type safety -- and to learn a little about it
 - Add automated testing (Vitest / React Testing Library)
-- Further refine animation system for consistency
+- ~~Further refine animation system for consistency~~
 - Explore performance optimisation and bundle analysis
 - Dark mode
 
