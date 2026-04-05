@@ -36,7 +36,7 @@ export default function DesktopProjectCard({ project, bgColor, pillColor, state 
       <motion.h2
         ref={titleRef}
         variants={v.title}
-        className="tracking-tight leading-tight absolute left-0 right-0 px-10 text-3xl"
+        className="tracking-tight leading-tight absolute left-0 right-0 px-10 text-3xl truncate"
       >
         {project.title}
       </motion.h2>

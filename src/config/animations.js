@@ -15,7 +15,8 @@ export const EASE_IN = [0.42, 0, 1, 1];
 // Standard transitions
 export const FADE_FAST = { duration: DURATION_FAST, ease: EASE_OUT };
 export const FADE_MEDIUM = { duration: DURATION_MEDIUM, ease: EASE_OUT };
-export const SPRING_EXPAND = {
+export const FADE_SLOW = { duration: DURATION_SLOW, ease: EASE_OUT };
+export const LAYOUT_SPRING = {
   type: 'spring',
   stiffness: 320,
   damping: 28,
