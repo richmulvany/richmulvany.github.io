@@ -18,12 +18,7 @@ const mockState = {
 describe('DesktopProjectCard', () => {
   test('renders project title, description, tech, and link', () => {
     render(
-      <DesktopProjectCard
-        project={mockProject}
-        bgColor="#fff"
-        pillColor="#f00"
-        state={mockState}
-      />
+      <DesktopProjectCard project={mockProject} bgColor="#fff" pillColor="#f00" state={mockState} />
     );
 
     expect(screen.getByText(/test project/i)).toBeInTheDocument();

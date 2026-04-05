@@ -73,7 +73,7 @@ export default function SocialsFab({ show }) {
                         href={s.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label={s.description} 
+                        aria-label={s.description}
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.15 + i * 0.05 }}

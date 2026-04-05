@@ -17,12 +17,7 @@ const mockState = {
 describe('MobileProjectCard', () => {
   test('renders project title and tech when collapsed', () => {
     render(
-      <MobileProjectCard
-        project={mockProject}
-        bgColor="#fff"
-        pillColor="#00f"
-        state={mockState}
-      />
+      <MobileProjectCard project={mockProject} bgColor="#fff" pillColor="#00f" state={mockState} />
     );
 
     expect(screen.getByText(/mobile project/i)).toBeInTheDocument();
@@ -31,12 +26,7 @@ describe('MobileProjectCard', () => {
 
   test('toggles expanded state on click', () => {
     render(
-      <MobileProjectCard
-        project={mockProject}
-        bgColor="#fff"
-        pillColor="#00f"
-        state={mockState}
-      />
+      <MobileProjectCard project={mockProject} bgColor="#fff" pillColor="#00f" state={mockState} />
     );
 
     const card = screen.getByText(/mobile project/i).closest('div');
