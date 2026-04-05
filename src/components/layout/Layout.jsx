@@ -15,7 +15,7 @@ export default function Layout({ sidebar, children }) {
 
   return (
     <div className="h-screen flex bg-taupe-200 text-gray-900">
-      <aside className="w-1/3 flex-shrink-0 px-10 py-4 bg-stone-100">{sidebar}</aside>
+      <aside className="w-1/3 flex-shrink-0 px-10 bg-stone-100">{sidebar}</aside>
 
       <main
         id="scroll-container"
