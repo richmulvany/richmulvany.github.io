@@ -74,11 +74,7 @@ export default function QualificationList() {
         `}
       >
         {allQualifications.map((q) => (
-          <QualificationPill
-            key={q.title}
-            QualType={q.type}
-            qualification={q}
-          />
+          <QualificationPill key={q.title} QualType={q.type} qualification={q} />
         ))}
       </div>
 

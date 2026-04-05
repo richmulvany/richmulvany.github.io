@@ -43,7 +43,7 @@ export default function SocialsFab({ show }) {
                 aria-label="Open Socials"
                 onClick={() => setOpen(true)}
                 className="w-full h-full flex items-center justify-center text-white"
-                style={{ transform: "translate(-2px, 0px)" }}
+                style={{ transform: 'translate(-2px, 0px)' }}
               >
                 <Send size={21} />
               </button>

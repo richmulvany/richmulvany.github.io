@@ -10,10 +10,7 @@ export default function DesktopLayout({ sidebar, children }) {
         {sidebar}
       </aside>
 
-      <main
-        id="scroll-container"
-        className="w-2/3 h-full overflow-y-auto p-10 space-y-12"
-      >
+      <main id="scroll-container" className="w-2/3 h-full overflow-y-auto p-10 space-y-12">
         {children}
       </main>
     </div>
