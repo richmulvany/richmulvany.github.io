@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import Color from 'color';
 import { PROJECT_ACTIONS } from '../../config/projectActions';
 import useProjectCardVariants from '../../hooks/animations/useProjectCardVariants';
-import { FADE_FAST } from '../../config/animations';
 
 /**
  * Desktop project card.

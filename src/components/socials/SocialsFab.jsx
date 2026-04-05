@@ -40,6 +40,7 @@ export default function SocialsFab({ show }) {
           >
             {!open && (
               <button
+                aria-label="Open Socials"
                 onClick={() => setOpen(true)}
                 className="w-full h-full flex items-center justify-center text-white"
               >
@@ -50,6 +51,7 @@ export default function SocialsFab({ show }) {
             {open && (
               <>
                 <button
+                  aria-label="Close Socials"
                   onClick={() => setOpen(false)}
                   className="absolute top-1 right-1 p-2 text-white/80 z-50"
                 >
@@ -71,6 +73,7 @@ export default function SocialsFab({ show }) {
                         href={s.url}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label={s.description} 
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.15 + i * 0.05 }}
