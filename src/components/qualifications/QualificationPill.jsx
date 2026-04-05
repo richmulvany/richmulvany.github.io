@@ -3,7 +3,11 @@ import { GraduationCap, BadgeCheck, BriefcaseBusiness } from 'lucide-react';
 /**
  * Individual qualification pill.
  */
-export default function QualificationPill({ QualType, qualification, iconColor }) {
+export default function QualificationPill({
+  QualType,
+  qualification,
+  iconColor,
+}) {
   const iconMap = {
     degree: GraduationCap,
     certificate: BadgeCheck,
