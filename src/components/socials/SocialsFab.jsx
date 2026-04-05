@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Send, X } from 'lucide-react';
 import { socials } from '../../data/socials';
 import SocialIcon from './SocialIcon';
-import { FADE_FAST, SPRING_EXPAND } from '../../config/animations';
+import { FADE_FAST, LAYOUT_SPRING } from '../../config/animations';
 
 /**
  * Floating action button for mobile socials.
@@ -35,7 +35,7 @@ export default function SocialsFab({ show }) {
               borderWidth: open ? 2 : 0,
               borderColor: 'rgba(248, 133, 85, 0.5)',
             }}
-            transition={SPRING_EXPAND}
+            transition={LAYOUT_SPRING}
             className="bg-orange-600/50 backdrop-blur-md shadow-lg overflow-hidden relative"
           >
             {!open && (

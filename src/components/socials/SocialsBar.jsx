@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { socials } from '../../data/socials';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import SocialIcon from './SocialIcon';
+import { socials } from '../../data/socials';
 import { BREAKPOINTS } from '../../config/breakpoints';
+import { motion } from 'framer-motion';
+import { FADE_FAST } from '../../config/animations';
 
 /**
  * Social icons bar.
@@ -17,27 +19,25 @@ export default function SocialsBar({ iconColor, hoverColor, iconSize }) {
       {/* Icon row */}
       <div className="flex justify-center gap-12 md:gap-10">
         {socials.map((s, i) => (
-          <a
+          <motion.a
             key={i}
             href={s.url || '#'}
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={() => setHoveredText(s.description)}
             onMouseLeave={() => setHoveredText('')}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ ...FADE_FAST, delay: i * 0.05 }}
             className="transition-colors"
           >
-            <div
+            <motion.div
               style={{ color: iconColor }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = hoverColor;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = iconColor;
-              }}
+              whileHover={{ color: hoverColor }}
             >
               <SocialIcon social={s} size={parseInt(iconSize)} />
-            </div>
-          </a>
+            </motion.div>
+          </motion.a>
         ))}
       </div>
 

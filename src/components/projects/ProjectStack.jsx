@@ -8,6 +8,7 @@ import useMediaQuery from '../../hooks/useMediaQuery';
 import SocialsFab from '../socials/SocialsFab';
 import { PROJECT_COLORS } from '../../config/projectColors';
 import { BREAKPOINTS } from '../../config/breakpoints';
+import { FADE_FAST, FADE_SLOW } from '../../config/animations';
 
 /**
  * Project stack section.
@@ -15,11 +16,11 @@ import { BREAKPOINTS } from '../../config/breakpoints';
  */
 export default function ProjectStack() {
   const scrollY = useMotionValue(0);
-
   const sectionRef = useRef(null);
   const inView = useInView(sectionRef, 0.2);
   const isDesktop = useMediaQuery(BREAKPOINTS.desktop);
 
+  // Map scroll for motion transforms
   useScrollSource((value) => {
     scrollY.set(value * 0.3);
   });
@@ -53,6 +54,7 @@ export default function ProjectStack() {
           <div className="relative z-10">
             <motion.p
               style={{ opacity, y }}
+              transition={FADE_SLOW}
               className="text-4xl md:text-5xl text-center mb-20 md:mb-36"
             >
               My Projects
@@ -70,6 +72,8 @@ export default function ProjectStack() {
                       top: `${index * 57}px`,
                       zIndex: index + 1,
                     }}
+                    layout
+                    transition={FADE_FAST}
                   >
                     <ProjectCardContainer
                       project={project}
