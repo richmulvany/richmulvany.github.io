@@ -32,7 +32,7 @@ export default function useProjectCardVariants(titleHeight) {
           transition: { duration: DURATION_MEDIUM, ease: EASE_OUT },
         },
       },
-      
+
       techContainer: {
         collapsed: {},
         expanded: {},

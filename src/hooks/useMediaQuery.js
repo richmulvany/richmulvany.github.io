@@ -6,8 +6,7 @@ import { useEffect, useState } from 'react';
  */
 export default function useMediaQuery(query) {
   const [matches, setMatches] = useState(
-    typeof window !== 'undefined' &&
-      window.matchMedia(query).matches
+    typeof window !== 'undefined' && window.matchMedia(query).matches
   );
 
   useEffect(() => {

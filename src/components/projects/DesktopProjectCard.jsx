@@ -24,7 +24,7 @@ export default function DesktopProjectCard({ project, bgColor, pillColor, state 
 
   return (
     <motion.div
-      onClick={() => setLocked(p => !p)}
+      onClick={() => setLocked((p) => !p)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="relative rounded-4xl shadow-lg p-8 mx-8 flex h-96 cursor-pointer overflow-hidden"
@@ -53,7 +53,7 @@ export default function DesktopProjectCard({ project, bgColor, pillColor, state 
         variants={v.techContainer}
         className="flex flex-wrap gap-2 absolute left-0 right-0 px-8"
       >
-        {project.tech.map(t => (
+        {project.tech.map((t) => (
           <motion.h1
             key={t}
             variants={v.techItem}

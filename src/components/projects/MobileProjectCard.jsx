@@ -16,7 +16,10 @@ export default function MobileProjectCard({ project, bgColor, pillColor, state }
 
   return (
     <motion.div
-      onClick={e => { e.stopPropagation(); setLocked(p => !p); }}
+      onClick={(e) => {
+        e.stopPropagation();
+        setLocked((p) => !p);
+      }}
       className="relative rounded-3xl ml-4 mr-4 shadow-lg cursor-pointer overflow-hidden"
       style={{ backgroundColor: bgColor }}
       layout
@@ -36,8 +39,12 @@ export default function MobileProjectCard({ project, bgColor, pillColor, state }
           </motion.h2>
 
           {!expanded && (
-            <motion.div className="flex flex-wrap justify-center px-8 mt-6 gap-3" layout transition={LAYOUT_SPRING}>
-              {project.tech.map(t => (
+            <motion.div
+              className="flex flex-wrap justify-center px-8 mt-6 gap-3"
+              layout
+              transition={LAYOUT_SPRING}
+            >
+              {project.tech.map((t) => (
                 <h1
                   key={t}
                   className="text-md px-5 py-2 rounded-full font-medium"

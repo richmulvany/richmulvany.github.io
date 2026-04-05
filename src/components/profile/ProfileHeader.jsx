@@ -34,36 +34,24 @@ export default function ProfileHeader({ compact = false }) {
 
         <img
           src={ProfilePic}
-          className={`object-cover ${
-            compact ? 'w-32 h-32 rounded-3xl' : 'w-full rounded-2xl'
-          }`}
+          className={`object-cover ${compact ? 'w-32 h-32 rounded-3xl' : 'w-full rounded-2xl'}`}
         />
 
         <div className="flex flex-col gap-2">
-          {!isDesktop && (
-            <h1 className="text-3xl ml-6 mb-2 mt-1">Richard Mulvany</h1>
-          )}
+          {!isDesktop && <h1 className="text-3xl ml-6 mb-2 mt-1">Richard Mulvany</h1>}
 
           {/* Shared animation container */}
-          <div
-            className={`relative min-h-[80px] flex items-start ${
-              compact ? 'mt-0' : 'mt-4'
-            }`}
-          >
+          <div className={`relative min-h-[80px] flex items-start ${compact ? 'mt-0' : 'mt-4'}`}>
             {/* Description */}
             <motion.div
-              className={`absolute w-full ${
-                compact ? 'left-6' : 'left-0 top-2'
-              }`}
+              className={`absolute w-full ${compact ? 'left-6' : 'left-0 top-2'}`}
               animate={{
                 opacity: shouldAnimate ? 0 : 1,
                 y: shouldAnimate ? -6 : 0,
               }}
               transition={FADE_FAST}
             >
-              <p className="text-[#f98555] text-sm">
-                Grayce Group for NEO NEXT+
-              </p>
+              <p className="text-[#f98555] text-sm">Grayce Group for NEO NEXT+</p>
               <p className="text-gray-500 text-sm mb-6">
                 Data Governance Engineer
                 <br />
@@ -82,11 +70,7 @@ export default function ProfileHeader({ compact = false }) {
                 transition={FADE_FAST}
               >
                 <div className="w-fit px-7 mt-2 mx-auto bg-taupe-200 rounded-full py-[1px] pb-4">
-                  <SocialsBar
-                    iconColor="#666"
-                    hoverColor="#f98555"
-                    iconSize="26px"
-                  />
+                  <SocialsBar iconColor="#666" hoverColor="#f98555" iconSize="26px" />
                 </div>
               </motion.div>
             )}

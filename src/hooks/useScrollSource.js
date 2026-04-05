@@ -9,15 +9,12 @@ export default function useScrollSource(callback) {
   const isDesktop = useMediaQuery('(min-width: 768px)');
 
   useEffect(() => {
-    const target = isDesktop
-      ? document.getElementById('scroll-container')
-      : window;
+    const target = isDesktop ? document.getElementById('scroll-container') : window;
 
     if (!target) return;
 
     const handleScroll = () => {
-      const scrollTop =
-        target === window ? window.scrollY : target.scrollTop;
+      const scrollTop = target === window ? window.scrollY : target.scrollTop;
 
       callback(scrollTop);
     };

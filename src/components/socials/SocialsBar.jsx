@@ -31,10 +31,7 @@ export default function SocialsBar({ iconColor, hoverColor, iconSize }) {
             transition={{ ...FADE_FAST, delay: i * 0.05 }}
             className="transition-colors"
           >
-            <motion.div
-              style={{ color: iconColor }}
-              whileHover={{ color: hoverColor }}
-            >
+            <motion.div style={{ color: iconColor }} whileHover={{ color: hoverColor }}>
               <SocialIcon social={s} size={parseInt(iconSize)} />
             </motion.div>
           </motion.a>

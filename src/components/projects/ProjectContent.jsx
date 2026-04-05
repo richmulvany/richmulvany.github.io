@@ -5,13 +5,9 @@ export default function ProjectContent({ project }) {
 
   return (
     <>
-      <h2 className="tracking-tight leading-tight text-3xl">
-        {project.title}
-      </h2>
+      <h2 className="tracking-tight leading-tight text-3xl">{project.title}</h2>
 
-      <p className="text-gray-700 text-sm leading-relaxed text-justify">
-        {project.description}
-      </p>
+      <p className="text-gray-700 text-sm leading-relaxed text-justify">{project.description}</p>
 
       <a
         href={project.link}

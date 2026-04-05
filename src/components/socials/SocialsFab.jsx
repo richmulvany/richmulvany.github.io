@@ -62,9 +62,7 @@ export default function SocialsFab({ show }) {
                   transition={{ duration: 0.15 }}
                   className="p-6 pb-3"
                 >
-                  <h2 className="text-white text-xl mb-4">
-                    Connect with me
-                  </h2>
+                  <h2 className="text-white text-xl mb-4">Connect with me</h2>
 
                   <div className="flex flex-col gap-6">
                     {socials.map((s, i) => (
@@ -79,9 +77,7 @@ export default function SocialsFab({ show }) {
                         className="flex items-center gap-4 text-white"
                       >
                         <SocialIcon social={s} size={18} />
-                        <span className="text-xs text-white/80">
-                          {s.description}
-                        </span>
+                        <span className="text-xs text-white/80">{s.description}</span>
                       </motion.a>
                     ))}
                   </div>
