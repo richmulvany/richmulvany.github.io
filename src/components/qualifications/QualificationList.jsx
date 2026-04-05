@@ -4,6 +4,20 @@ import { degrees } from '../../data/degrees';
 import { certificates } from '../../data/certificates';
 import QualificationPill from './QualificationPill';
 
+/**
+ * QualificationList
+ *
+ * Displays a unified list of qualifications (jobs, degrees, and certificates)
+ * as a series of QualificationPill components.
+ *
+ * The component detects vertical overflow within its container and, when content
+ * exceeds the available space, initially truncates the list and displays a
+ * "Show more" control with a gradient fade. Expanding the list enables scrolling
+ * and smoothly scrolls to the bottom to reveal additional items.
+ *
+ * ResizeObserver and window resize events are used to dynamically recalculate
+ * overflow, ensuring responsive behaviour across different screen sizes.
+ */
 export default function QualificationList() {
   const allQualifications = [
     ...jobs.map((j) => ({ ...j, type: 'job' })),
