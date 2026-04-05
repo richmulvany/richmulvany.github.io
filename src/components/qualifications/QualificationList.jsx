@@ -1,11 +1,14 @@
-import { jobs } from "../../data/jobs";
-import { degrees } from "../../data/degrees";
-import { certificates } from "../../data/certificates";
-import QualificationPill from "./QualificationPill";
+import { jobs } from '../../data/jobs';
+import { degrees } from '../../data/degrees';
+import { certificates } from '../../data/certificates';
+import QualificationPill from './QualificationPill';
 
+/**
+ * Renders all qualifications grouped by type.
+ */
 export default function QualificationsList() {
   return (
-    <div className="">
+    <div>
       {jobs.map((j) => (
         <QualificationPill key={j.title} QualType="job" qualification={j} />
       ))}
