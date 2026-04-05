@@ -5,13 +5,14 @@
  */
 export default function DesktopLayout({ sidebar, children }) {
   return (
-    <div className="flex bg-taupe-200 text-gray-900">
-      <aside className="w-1/3 flex-shrink-0 px-10 py-4 bg-stone-100 shadow-md">{sidebar}</aside>
+    <div className="flex h-dvh overflow-hidden bg-taupe-200 text-gray-900">
+      <aside className="w-1/3 flex-shrink-0 px-10 py-4 bg-stone-100 shadow-md overflow-hidden">
+        {sidebar}
+      </aside>
 
       <main
         id="scroll-container"
-        className="w-2/3 overflow-y-auto p-10 space-y-12"
-        style={{ maxHeight: '100vh' }}
+        className="w-2/3 h-full overflow-y-auto p-10 space-y-12"
       >
         {children}
       </main>
