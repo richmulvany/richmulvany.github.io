@@ -7,11 +7,10 @@ import QualificationList from '../qualifications/QualificationList';
  */
 export default function Sidebar() {
   return (
-    <div className="flex flex-col justify-between h-full">
-      <div>
-        <ProfileHeader />
-        <QualificationList />
-      </div>
+    <div className="flex flex-col h-full relative">
+      <ProfileHeader />
+      {/* Remove flex-1 overflow-hidden; let QualificationList handle overflow */}
+      <QualificationList />
     </div>
   );
 }

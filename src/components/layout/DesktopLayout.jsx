@@ -5,8 +5,8 @@
  */
 export default function DesktopLayout({ sidebar, children }) {
   return (
-    <div className="flex h-dvh overflow-hidden bg-taupe-200 text-gray-900">
-      <aside className="w-1/3 flex-shrink-0 px-10 py-4 bg-stone-100 shadow-md overflow-hidden">
+    <div className="flex h-dvh bg-taupe-200 text-gray-900">
+      <aside className="w-1/3 flex-shrink-0 px-10 py-4 bg-stone-100 shadow-md h-full">
         {sidebar}
       </aside>
 
