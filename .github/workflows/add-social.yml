@@ -1,0 +1,71 @@
+name: Add Social
+
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: "Name (GitHub, LinkedIn, etc.)"
+        required: true
+      url:
+        description: "URL"
+        required: true
+      description:
+        description: "Tooltip text"
+        required: true
+      type:
+        description: "svg or lucide"
+        required: true
+      icon:
+        description: "Icon name (e.g. Send, FileUser) if lucide"
+        required: false
+
+jobs:
+  add-social:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Update socials.json
+        run: |
+          node <<EOF
+          const fs = require('fs');
+
+          const path = 'src/data/socials.json';
+          const data = JSON.parse(fs.readFileSync(path, 'utf8'));
+
+          const newItem = {
+            title: process.env.TITLE,
+            url: process.env.URL,
+            description: process.env.DESCRIPTION,
+            type: process.env.TYPE
+          };
+
+          if (process.env.TYPE === 'lucide' && process.env.ICON) {
+            newItem.icon = process.env.ICON;
+          }
+
+          data.unshift(newItem);
+
+          fs.writeFileSync(path, JSON.stringify(data, null, 2));
+          EOF
+        env:
+          TITLE: ${{ github.event.inputs.title }}
+          URL: ${{ github.event.inputs.url }}
+          DESCRIPTION: ${{ github.event.inputs.description }}
+          TYPE: ${{ github.event.inputs.type }}
+          ICON: ${{ github.event.inputs.icon }}
+
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add src/data/socials.json
+          git commit -m "Add social: ${{ github.event.inputs.title }}"
+          git push

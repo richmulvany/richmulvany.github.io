@@ -1,0 +1,68 @@
+name: Add Project
+
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: "Project title"
+        required: true
+      description:
+        description: "Project description"
+        required: true
+      tech:
+        description: "Comma-separated tech list"
+        required: true
+      link:
+        description: "Project link"
+        required: true
+      type:
+        description: "proj or blog"
+        required: true
+
+jobs:
+  add-project:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Update projects.json
+        run: |
+          node <<EOF
+          const fs = require('fs');
+
+          const path = 'src/data/projects.json';
+          const data = JSON.parse(fs.readFileSync(path, 'utf8'));
+
+          const newProject = {
+            title: process.env.TITLE,
+            description: process.env.DESCRIPTION,
+            tech: process.env.TECH.split(',').map(t => t.trim()),
+            link: process.env.LINK,
+            type: process.env.TYPE
+          };
+
+          data.unshift(newProject);
+
+          fs.writeFileSync(path, JSON.stringify(data, null, 2));
+          EOF
+        env:
+          TITLE: ${{ github.event.inputs.title }}
+          DESCRIPTION: ${{ github.event.inputs.description }}
+          TECH: ${{ github.event.inputs.tech }}
+          LINK: ${{ github.event.inputs.link }}
+          TYPE: ${{ github.event.inputs.type }}
+
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add src/data/projects.json
+          git commit -m "Add project: ${{ github.event.inputs.title }}"
+          git push

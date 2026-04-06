@@ -1,0 +1,53 @@
+name: Add Certificate
+
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: "Certificate title"
+        required: true
+      description:
+        description: "Description (e.g. Certificate 2025)"
+        required: true
+
+jobs:
+  add-certificate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Update certificates.json
+        run: |
+          node <<EOF
+          const fs = require('fs');
+
+          const path = 'src/data/certificates.json';
+          const data = JSON.parse(fs.readFileSync(path, 'utf8'));
+
+          const newItem = {
+            title: process.env.TITLE,
+            description: process.env.DESCRIPTION
+          };
+
+          data.unshift(newItem);
+
+          fs.writeFileSync(path, JSON.stringify(data, null, 2));
+          EOF
+        env:
+          TITLE: ${{ github.event.inputs.title }}
+          DESCRIPTION: ${{ github.event.inputs.description }}
+
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add src/data/certificates.json
+          git commit -m "Add certificate: ${{ github.event.inputs.title }}"
+          git push
