@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, X } from 'lucide-react';
-import { socials } from '../../data/socials';
+import socials from '../../data/socials.json';
 import SocialIcon from './SocialIcon';
 import { FADE_FAST, LAYOUT_SPRING } from '../../config/animations';
 

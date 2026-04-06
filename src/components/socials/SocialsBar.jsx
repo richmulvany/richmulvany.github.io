@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import SocialIcon from './SocialIcon';
-import { socials } from '../../data/socials';
+import socials from '../../data/socials.json';
 import { BREAKPOINTS } from '../../config/breakpoints';
 import { motion } from 'framer-motion';
 import { FADE_FAST } from '../../config/animations';

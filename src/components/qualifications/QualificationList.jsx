@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
-import { jobs } from '../../data/jobs';
-import { degrees } from '../../data/degrees';
-import { certificates } from '../../data/certificates';
+import jobs from '../../data/jobs.json';
+import degrees from '../../data/degrees.json';
+import certificates from '../../data/certificates.json';
 import QualificationPill from './QualificationPill';
 
 /**
