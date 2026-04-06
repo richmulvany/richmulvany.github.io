@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion, useTransform, useMotionValue } from 'framer-motion';
 import ProjectCardContainer from './ProjectCardContainer';
-import { projects } from '../../data/projects';
+import projects from '../../data/projects.json';
 import useScrollSource from '../../hooks/useScrollSource';
 import useInView from '../../hooks/useInView';
 import useMediaQuery from '../../hooks/useMediaQuery';

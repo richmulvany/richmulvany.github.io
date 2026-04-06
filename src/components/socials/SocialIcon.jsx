@@ -1,3 +1,13 @@
+import { Send, FileUser } from 'lucide-react';
+
+/**
+ * Lucide icon map for custom icons.
+ */
+const lucideIcons = {
+  Send,
+  FileUser,
+};
+
 /**
  * SVG icon map for custom icons.
  */
@@ -17,7 +27,7 @@ const svgIcons = {
  */
 export default function SocialIcon({ social, size = 20, className = '' }) {
   if (social.type === 'lucide' && social.icon) {
-    const Icon = social.icon;
+    const Icon = lucideIcons[social.icon];
     return <Icon size={size} className={className} />;
   }
 
