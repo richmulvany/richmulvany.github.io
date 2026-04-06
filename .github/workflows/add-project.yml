@@ -19,6 +19,9 @@ on:
         description: "proj or blog"
         required: true
 
+permissions:
+  contents: write 
+  
 jobs:
   add-project:
     runs-on: ubuntu-latest
@@ -48,7 +51,7 @@ jobs:
             type: process.env.TYPE
           };
 
-          data.unshift(newProject);
+          data.push(newProject);
 
           fs.writeFileSync(path, JSON.stringify(data, null, 2));
           EOF

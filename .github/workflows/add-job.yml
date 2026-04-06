@@ -10,6 +10,9 @@ on:
         description: "Description (e.g. Since Nov 2024)"
         required: true
 
+permissions:
+  contents: write 
+  
 jobs:
   add-job:
     runs-on: ubuntu-latest
