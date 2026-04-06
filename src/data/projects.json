@@ -31,14 +31,14 @@
     "title": "WarcraftLogs Data Pipeline",
     "description": "I built an end-to-end analytics pipeline for the Student Council World of Warcraft guild. The project ingests raw combat logs via the Warcraft Logs API, processes them through a bronze/silver/gold Databricks pipeline to compute metrics like DPS, healing, deaths, and item levels, and exposes interactive dashboards via Streamlit to explore raid performance, progression, and player insights.",
     "tech": ["Databricks", "Pyspark", "Data Engineering", "REST API", "Streamlit", "Data Analysis"],
-    "link": "https://github.com/richmulvany/richmulvany-databricks-projects/blob/main/warcraftlogs-raid-analysis/data-pipeline/README.md",
+    "link": "https://github.com/richmulvany/richmulvany-databricks-projects-archive/blob/main/warcraftlogs-raid-analysis/data-pipeline/README.md",
     "type": "proj"
   },
   {
     "title": "HR Chatbot",
     "description": "I built an HR Chatbot that answers employee questions about company policies, procedures, and resources. It processes natural language queries, retrieves relevant information from a structured knowledge base, and serves responses via a web interface in real time. The project includes conversation management, API integration, and a lightweight frontend for interaction.",
     "tech": ["Databricks", "Pyspark", "Langchain", "FastAPI", "SQLite", "React"],
-    "link": "https://github.com/richmulvany/richmulvany-databricks-projects/tree/main/hr-chatbot",
+    "link": "https://github.com/richmulvany/richmulvany-databricks-projects-archive/tree/main/hr-chatbot",
     "type": "proj"
   },
   {
