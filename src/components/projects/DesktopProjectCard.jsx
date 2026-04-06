@@ -50,13 +50,13 @@ export default function DesktopProjectCard({ project, bgColor, pillColor, state 
 
       <motion.div
         variants={v.techContainer}
-        className="flex flex-wrap gap-2 absolute left-0 right-0 px-8"
+        className="flex flex-nowrap gap-2 absolute left-0 right-0 px-8"
       >
         {project.tech.map((t) => (
           <motion.h1
             key={t}
             variants={v.techItem}
-            className="px-5 py-3 rounded-full"
+            className="px-5 py-3 rounded-full text-sm truncate"
             style={{
               backgroundColor: pillColor,
               color: Color(pillColor).darken(0.55).hex(),
