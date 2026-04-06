@@ -19,6 +19,9 @@ on:
         description: "Icon name (e.g. Send, FileUser) if lucide"
         required: false
 
+permissions:
+  contents: write 
+  
 jobs:
   add-social:
     runs-on: ubuntu-latest
